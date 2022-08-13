@@ -162,10 +162,9 @@ namespace LaunchFoundationGameCamera
             Text = $"Foundation Game Camera Launcher v{AppInformation.AssemblyVersion}";
 
             label_Header.Font = GetFontFromMemory(FontResource.PatrickHandSC_Regular, 14.0f, FontStyle.Bold);
+            label_ClickHere.Font = GetFontFromMemory(FontResource.Lato_Bold, 10.0f, FontStyle.Bold);
             label_LoadingInfo.Font = GetFontFromMemory(FontResource.Lato_Regular, 10.0f);
             label_Supportinfo.Font = GetFontFromMemory(FontResource.Lato_Regular, 10.0f);
-
-            label_Supportinfo.Text = $"For support, troubleshooting and sharing screen captures join the element chat: [CLICK HERE]";
         }
 
         private void PictureBox_Github_Click(object sender, EventArgs e)
@@ -225,6 +224,11 @@ namespace LaunchFoundationGameCamera
             }
 
             Process.Start("notepad.exe", licenseFile);
+        }
+
+        private void Label_ClickHere_Click(object sender, EventArgs e)
+        {
+            OpenWebsite(Website.Element);
         }
     }
 }

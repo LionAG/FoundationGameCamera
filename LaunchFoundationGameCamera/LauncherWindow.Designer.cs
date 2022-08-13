@@ -31,21 +31,24 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LauncherWindow));
             this.panel_Content = new System.Windows.Forms.Panel();
             this.panel_Bottom = new System.Windows.Forms.Panel();
+            this.pictureBox_License = new System.Windows.Forms.PictureBox();
             this.button_LoadFovFix = new System.Windows.Forms.Button();
             this.pictureBox_Github = new System.Windows.Forms.PictureBox();
             this.button_Start = new System.Windows.Forms.Button();
             this.panel_Middle = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.label_Supportinfo = new System.Windows.Forms.Label();
+            this.label_ClickHere = new System.Windows.Forms.Label();
             this.label_LoadingInfo = new System.Windows.Forms.Label();
             this.panel_Top = new System.Windows.Forms.Panel();
             this.label_Header = new System.Windows.Forms.Label();
-            this.pictureBox_License = new System.Windows.Forms.PictureBox();
             this.panel_Content.SuspendLayout();
             this.panel_Bottom.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_License)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Github)).BeginInit();
             this.panel_Middle.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.panel_Top.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_License)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_Content
@@ -70,6 +73,18 @@
             this.panel_Bottom.Name = "panel_Bottom";
             this.panel_Bottom.Size = new System.Drawing.Size(726, 209);
             this.panel_Bottom.TabIndex = 2;
+            // 
+            // pictureBox_License
+            // 
+            this.pictureBox_License.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox_License.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_License.Image")));
+            this.pictureBox_License.Location = new System.Drawing.Point(683, 158);
+            this.pictureBox_License.Name = "pictureBox_License";
+            this.pictureBox_License.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox_License.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox_License.TabIndex = 4;
+            this.pictureBox_License.TabStop = false;
+            this.pictureBox_License.Click += new System.EventHandler(this.pictureBox_License_Click);
             // 
             // button_LoadFovFix
             // 
@@ -119,7 +134,7 @@
             // 
             // panel_Middle
             // 
-            this.panel_Middle.Controls.Add(this.label_Supportinfo);
+            this.panel_Middle.Controls.Add(this.flowLayoutPanel1);
             this.panel_Middle.Controls.Add(this.label_LoadingInfo);
             this.panel_Middle.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel_Middle.Location = new System.Drawing.Point(0, 143);
@@ -127,18 +142,39 @@
             this.panel_Middle.Size = new System.Drawing.Size(726, 95);
             this.panel_Middle.TabIndex = 1;
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Controls.Add(this.label_Supportinfo);
+            this.flowLayoutPanel1.Controls.Add(this.label_ClickHere);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 52);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(726, 43);
+            this.flowLayoutPanel1.TabIndex = 1;
+            // 
             // label_Supportinfo
             // 
             this.label_Supportinfo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label_Supportinfo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label_Supportinfo.Location = new System.Drawing.Point(0, 52);
+            this.label_Supportinfo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_Supportinfo.Location = new System.Drawing.Point(3, 0);
             this.label_Supportinfo.Name = "label_Supportinfo";
-            this.label_Supportinfo.Size = new System.Drawing.Size(726, 41);
+            this.label_Supportinfo.Size = new System.Drawing.Size(564, 43);
             this.label_Supportinfo.TabIndex = 1;
-            this.label_Supportinfo.Text = "For support, troubleshooting and sharing screen captures join the element chat: C" +
-    "LICK HERE";
-            this.label_Supportinfo.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_Supportinfo.Text = "For support, troubleshooting and sharing screen captures join the element chat:";
+            this.label_Supportinfo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label_Supportinfo.Click += new System.EventHandler(this.Label_Supportinfo_Click);
+            // 
+            // label_ClickHere
+            // 
+            this.label_ClickHere.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label_ClickHere.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label_ClickHere.Location = new System.Drawing.Point(573, 0);
+            this.label_ClickHere.Name = "label_ClickHere";
+            this.label_ClickHere.Size = new System.Drawing.Size(91, 43);
+            this.label_ClickHere.TabIndex = 2;
+            this.label_ClickHere.Text = "CLICK HERE";
+            this.label_ClickHere.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_ClickHere.Click += new System.EventHandler(this.Label_ClickHere_Click);
             // 
             // label_LoadingInfo
             // 
@@ -172,18 +208,6 @@
             this.label_Header.Text = "Welcome to FoundationGameCamera";
             this.label_Header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // pictureBox_License
-            // 
-            this.pictureBox_License.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox_License.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_License.Image")));
-            this.pictureBox_License.Location = new System.Drawing.Point(683, 158);
-            this.pictureBox_License.Name = "pictureBox_License";
-            this.pictureBox_License.Size = new System.Drawing.Size(40, 40);
-            this.pictureBox_License.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox_License.TabIndex = 4;
-            this.pictureBox_License.TabStop = false;
-            this.pictureBox_License.Click += new System.EventHandler(this.pictureBox_License_Click);
-            // 
             // LauncherWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -202,10 +226,11 @@
             this.Shown += new System.EventHandler(this.LauncherWindow_Shown);
             this.panel_Content.ResumeLayout(false);
             this.panel_Bottom.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_License)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox_Github)).EndInit();
             this.panel_Middle.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.panel_Top.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_License)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -223,5 +248,7 @@
         private PictureBox pictureBox_Github;
         private Button button_LoadFovFix;
         private PictureBox pictureBox_License;
+        private Label label_ClickHere;
+        private FlowLayoutPanel flowLayoutPanel1;
     }
 }
