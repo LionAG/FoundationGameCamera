@@ -100,7 +100,7 @@ namespace LaunchFoundationGameCamera
             {
                 var dllPath = Path.Combine(Path.GetTempPath(), "FoundationGameCamera.dll");
 
-                if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.FoundationGameCamera.dll", dllPath))
+                if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.GameCamera.dll", dllPath))
                 {
                     Logger.LogLine("Cannot unpack the resource");
                     return;
@@ -120,7 +120,7 @@ namespace LaunchFoundationGameCamera
 
         private void StartFovFix()
         {
-            Logger.LogLine("Starting fov fix");
+            Logger.LogLine("Starting FoV fix");
 
             // Try to find the game process id.
 
@@ -128,13 +128,22 @@ namespace LaunchFoundationGameCamera
 
             if (processId != 0)
             {
-                var dllPath = Path.Combine(Path.GetTempPath(), "FoundationFovFix.dll");
+                var dllPath = Path.Combine(Path.GetTempPath(), "FoVFix.dll");
 
-                if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.FoundationFovFix.dll", dllPath))
+                if(Process.GetProcessById(processId).MainModule?.ModuleName == "ROTTR.exe")
+                {
+                    if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.FoV_ROTTR.dll", dllPath))
+                    {
+                        Logger.LogLine("Cannot unpack the resource");
+                        return;
+                    }
+                }
+                else if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.FoV_SOTTR.dll", dllPath))
                 {
                     Logger.LogLine("Cannot unpack the resource");
                     return;
                 }
+
 
                 if (DllInjector.Inject(processId, dllPath))
                 {
