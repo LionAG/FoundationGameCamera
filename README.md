@@ -26,7 +26,7 @@ Do not use both mods at the same time.
 
 This project is still under development. As such some things may work partially and/or incorrectly.
 
-The cursor hook is not yet fully functional. To see the cursor in game follow the steps:
+The mouse/cursor hook is not yet fully functional. To see the cursor in game follow the steps:
 1. Enable the overlay.
 2. Pause and unpause the game.
 
