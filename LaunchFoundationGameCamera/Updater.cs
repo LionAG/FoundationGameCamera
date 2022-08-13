@@ -64,7 +64,7 @@ namespace LaunchFoundationGameCamera
 
                             var client = new HttpClient();
 
-                            var destinationFileName = $"{AppInformation.AssemblyName}_{latest.TagName}";
+                            var destinationFileName = $"{AppInformation.AssemblyName}_{latest.TagName}.exe";
 
                             using var stream = client.GetStreamAsync(launcherAsset.BrowserDownloadUrl).Result;
                             using var fileStream = new FileStream(destinationFileName, System.IO.FileMode.Create);
