@@ -1,0 +1,4 @@
+v0.1.1
+- Launcher app scales correctly
+- Field of view stays at the preset value
+- Fix incorrect memory access during checkpoint reloading 
