@@ -161,6 +161,7 @@ namespace LaunchFoundationGameCamera
         {
             Text = $"Foundation Game Camera Launcher v{AppInformation.AssemblyVersion}";
 
+            label_Header.Font = GetFontFromMemory(FontResource.PatrickHandSC_Regular, 14.0f, FontStyle.Bold);
             label_LoadingInfo.Font = GetFontFromMemory(FontResource.Lato_Regular, 10.0f);
             label_Supportinfo.Font = GetFontFromMemory(FontResource.Lato_Regular, 10.0f);
 

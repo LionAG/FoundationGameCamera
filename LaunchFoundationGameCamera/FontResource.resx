@@ -124,4 +124,7 @@
   <data name="Lato_Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>fonts\lato\lato-regular.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="PatrickHandSC_Regular" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Fonts\Patrick_Hand_SC\PatrickHandSC-Regular.ttf;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
 </root>

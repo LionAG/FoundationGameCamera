@@ -79,5 +79,15 @@ namespace LaunchFoundationGameCamera {
                 return ((byte[])(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
+        internal static byte[] PatrickHandSC_Regular {
+            get {
+                object obj = ResourceManager.GetObject("PatrickHandSC_Regular", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
     }
 }

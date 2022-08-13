@@ -26,6 +26,7 @@
   <ItemGroup>
     <None Remove="Fonts\Lato\Lato-Bold.ttf" />
     <None Remove="Fonts\Lato\Lato-Regular.ttf" />
+    <None Remove="Fonts\Patrick_Hand_SC\PatrickHandSC-Regular.ttf" />
     <None Remove="License.txt" />
   </ItemGroup>
 
@@ -33,6 +34,7 @@
     <EmbeddedResource Include="Fonts\Lato\Lato-Bold.ttf" />
     <EmbeddedResource Include="Fonts\Lato\Lato-Regular.ttf" />
     <EmbeddedResource Include="License.txt" />
+    <EmbeddedResource Include="Fonts\Patrick_Hand_SC\PatrickHandSC-Regular.ttf" />
     <Content Include="Pictures\camera-pixabay-1724286_1280.ico" />
   </ItemGroup>
 
