@@ -26,11 +26,12 @@ Do not use both mods at the same time.
 
 This project is still under development. As such some things may work partially and/or incorrectly.
 
-The mouse/cursor hook is not yet fully functional. To see the cursor in game follow the steps:
-1. Enable the overlay.
-2. Pause and unpause the game.
+The display hook is not fully functional - to use it follow the steps:
 
-Repeat the above after hiding the overlay to hide the cursor.
+1. Set the desired values using the overlay sliders.
+2. Go to display settings and move the brightness slider in any way.
+
+Note: Using a custom resolution scale still requires using windowed mode.
 
 ### Acknowledgments
 
