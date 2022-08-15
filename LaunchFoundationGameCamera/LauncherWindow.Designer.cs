@@ -88,13 +88,14 @@
             // 
             // button_LoadFovFix
             // 
-            this.button_LoadFovFix.BackColor = System.Drawing.Color.DarkOrange;
+            this.button_LoadFovFix.BackColor = System.Drawing.Color.Indigo;
+            this.button_LoadFovFix.FlatAppearance.BorderColor = System.Drawing.Color.Indigo;
             this.button_LoadFovFix.FlatAppearance.BorderSize = 0;
-            this.button_LoadFovFix.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Chocolate;
-            this.button_LoadFovFix.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
+            this.button_LoadFovFix.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateBlue;
+            this.button_LoadFovFix.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSlateBlue;
             this.button_LoadFovFix.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_LoadFovFix.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_LoadFovFix.ForeColor = System.Drawing.Color.Black;
+            this.button_LoadFovFix.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
             this.button_LoadFovFix.Location = new System.Drawing.Point(392, 47);
             this.button_LoadFovFix.Name = "button_LoadFovFix";
             this.button_LoadFovFix.Size = new System.Drawing.Size(276, 54);
@@ -117,13 +118,14 @@
             // 
             // button_Start
             // 
-            this.button_Start.BackColor = System.Drawing.Color.DarkOrange;
+            this.button_Start.BackColor = System.Drawing.Color.Indigo;
+            this.button_Start.FlatAppearance.BorderColor = System.Drawing.Color.Indigo;
             this.button_Start.FlatAppearance.BorderSize = 0;
-            this.button_Start.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Chocolate;
-            this.button_Start.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Orange;
+            this.button_Start.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateBlue;
+            this.button_Start.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSlateBlue;
             this.button_Start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Start.Font = new System.Drawing.Font("Consolas", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.button_Start.ForeColor = System.Drawing.Color.Black;
+            this.button_Start.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
             this.button_Start.Location = new System.Drawing.Point(58, 47);
             this.button_Start.Name = "button_Start";
             this.button_Start.Size = new System.Drawing.Size(276, 54);
@@ -200,7 +202,7 @@
             // label_Header
             // 
             this.label_Header.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label_Header.Font = new System.Drawing.Font("Copperplate Gothic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label_Header.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label_Header.Location = new System.Drawing.Point(0, 0);
             this.label_Header.Name = "label_Header";
             this.label_Header.Size = new System.Drawing.Size(726, 143);
