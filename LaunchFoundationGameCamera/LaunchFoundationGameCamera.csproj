@@ -12,7 +12,7 @@
     <ApplicationIcon>Pictures\camera-pixabay-1724286_1280.ico</ApplicationIcon>
     <PackageIcon>camera-pixabay-1724286_1280.png</PackageIcon>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <AssemblyVersion>0.3.2</AssemblyVersion>
+    <AssemblyVersion>0.4.1</AssemblyVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
