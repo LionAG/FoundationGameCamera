@@ -197,7 +197,7 @@ namespace LaunchFoundationGameCamera
                 {
                     var latestVersion = updater.GetLatestVersionFromTag();
 
-                    if (MessageBox.Show($"Select OK to update the application to version {latestVersion}. The program will restart automatically.",
+                    if (MessageBox.Show($"The application will update to version {latestVersion} and restart automatically.",
                                         "Update check",
                                         MessageBoxButtons.OKCancel,
                                         MessageBoxIcon.Asterisk) == DialogResult.OK)
@@ -205,7 +205,7 @@ namespace LaunchFoundationGameCamera
                         updater.TryUpdateApplication();
                     }
 
-                    System.Windows.Forms.Application.Exit();
+                    Application.Exit();
                 }
             }
             catch (Exception ex)
@@ -218,7 +218,7 @@ namespace LaunchFoundationGameCamera
         {
             var licenseFile = "License.txt";
 
-            if (System.IO.File.Exists(licenseFile) == false)
+            if (File.Exists(licenseFile) == false)
             {
                 ResourceUnpacker.Unpack("LaunchFoundationGameCamera.License.txt", licenseFile);
             }
