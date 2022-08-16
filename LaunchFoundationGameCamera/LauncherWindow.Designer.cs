@@ -100,7 +100,7 @@
             this.button_LoadFovFix.Name = "button_LoadFovFix";
             this.button_LoadFovFix.Size = new System.Drawing.Size(276, 54);
             this.button_LoadFovFix.TabIndex = 3;
-            this.button_LoadFovFix.Text = "LOAD FOV FIX";
+            this.button_LoadFovFix.Text = "LOAD FoV FIX";
             this.button_LoadFovFix.UseVisualStyleBackColor = false;
             this.button_LoadFovFix.Click += new System.EventHandler(this.Button_LoadFovFix_Click);
             // 
@@ -130,7 +130,7 @@
             this.button_Start.Name = "button_Start";
             this.button_Start.Size = new System.Drawing.Size(276, 54);
             this.button_Start.TabIndex = 1;
-            this.button_Start.Text = "LOAD FGC";
+            this.button_Start.Text = "LOAD GAME CAMERA";
             this.button_Start.UseVisualStyleBackColor = false;
             this.button_Start.Click += new System.EventHandler(this.Button_Start_Click);
             // 
@@ -170,6 +170,7 @@
             // 
             this.label_ClickHere.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label_ClickHere.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label_ClickHere.ForeColor = System.Drawing.Color.LightBlue;
             this.label_ClickHere.Location = new System.Drawing.Point(573, 0);
             this.label_ClickHere.Name = "label_ClickHere";
             this.label_ClickHere.Size = new System.Drawing.Size(91, 43);
