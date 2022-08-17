@@ -62,10 +62,9 @@ namespace LaunchFoundationGameCamera
                         {
                             // Download the new version.
 
-                            var client = new HttpClient();
-
                             var destinationFileName = $"{AppInformation.AssemblyName}_{latest.TagName}.exe";
 
+                            using var client = new HttpClient();
                             using var stream = client.GetStreamAsync(launcherAsset.BrowserDownloadUrl).Result;
                             using var fileStream = new FileStream(destinationFileName, System.IO.FileMode.Create);
 
