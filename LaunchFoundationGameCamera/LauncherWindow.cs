@@ -34,12 +34,13 @@ namespace LaunchFoundationGameCamera
             Element
         }
 
-        private readonly string ElementInvite = "matrix.to/#/!RkOTHGOlafTBzYSfzC:matrix.org?via=matrix.org";
-        private string ElementInviteLink => ElementInvite.Insert(0, "https://");
-
         public readonly string RepositoryOwner = "Nesae-avi";
         public readonly string RepositoryName = "FoundationGameCamera";
+        private readonly string ElementInvite = "matrix.to/#/!RkOTHGOlafTBzYSfzC:matrix.org?via=matrix.org";
+
+        private string ElementInviteLink => ElementInvite.Insert(0, "https://");
         private string GithubRepositoryLink => $"https://github.com/{RepositoryOwner}/{RepositoryName}";
+        private string CommonResourcePath => Path.Combine(Path.GetTempPath(), "GameCameraMod.dll");
 
         private readonly List<string> SupportedGames = new()
         {
@@ -92,21 +93,19 @@ namespace LaunchFoundationGameCamera
 
         private void StartGameCamera()
         {
-            Logger.LogLine("Starting FGC");
+            Logger.LogLine("Starting Game Camera");
 
             int processId = FindGameProcess();
 
             if (processId != 0)
             {
-                var dllPath = Path.Combine(Path.GetTempPath(), "FoundationGameCamera.dll");
-
-                if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.GameCamera.dll", dllPath))
+                if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.GameCamera.dll", CommonResourcePath))
                 {
                     Logger.LogLine("Cannot unpack the resource");
                     return;
                 }
 
-                if (DllInjector.Inject(processId, dllPath))
+                if (DllInjector.Inject(processId, CommonResourcePath))
                 {
                     Logger.LogLine("Finished successfully");
                 }
@@ -128,24 +127,22 @@ namespace LaunchFoundationGameCamera
 
             if (processId != 0)
             {
-                var dllPath = Path.Combine(Path.GetTempPath(), "FoVFix.dll");
-
                 if(Process.GetProcessById(processId).MainModule?.ModuleName == "ROTTR.exe")
                 {
-                    if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.FoV_ROTTR.dll", dllPath))
+                    if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.FoV_ROTTR.dll", CommonResourcePath))
                     {
                         Logger.LogLine("Cannot unpack the resource");
                         return;
                     }
                 }
-                else if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.FoV_SOTTR.dll", dllPath))
+                else if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.FoV_SOTTR.dll", CommonResourcePath))
                 {
                     Logger.LogLine("Cannot unpack the resource");
                     return;
                 }
 
 
-                if (DllInjector.Inject(processId, dllPath))
+                if (DllInjector.Inject(processId, CommonResourcePath))
                 {
                     Logger.LogLine("Finished successfully");
                 }
