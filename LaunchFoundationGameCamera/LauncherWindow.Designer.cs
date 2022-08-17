@@ -84,7 +84,7 @@
             this.pictureBox_License.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox_License.TabIndex = 4;
             this.pictureBox_License.TabStop = false;
-            this.pictureBox_License.Click += new System.EventHandler(this.pictureBox_License_Click);
+            this.pictureBox_License.Click += new System.EventHandler(this.PictureBox_License_Click);
             // 
             // button_LoadFovFix
             // 

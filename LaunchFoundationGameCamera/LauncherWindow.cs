@@ -90,7 +90,7 @@ namespace LaunchFoundationGameCamera
             Process.Start(psi);
         }
 
-        private void StartFGC()
+        private void StartGameCamera()
         {
             Logger.LogLine("Starting FGC");
 
@@ -118,7 +118,7 @@ namespace LaunchFoundationGameCamera
             }
         }
 
-        private void StartFovFix()
+        private void StartFoVFix()
         {
             Logger.LogLine("Starting FoV fix");
 
@@ -179,12 +179,12 @@ namespace LaunchFoundationGameCamera
 
         private void Button_Start_Click(object sender, EventArgs e)
         {
-            StartFGC();
+            StartGameCamera();
         }
 
         private void Button_LoadFovFix_Click(object sender, EventArgs e)
         {
-            StartFovFix();
+            StartFoVFix();
         }
 
         private void LauncherWindow_Shown(object sender, EventArgs e)
@@ -214,7 +214,7 @@ namespace LaunchFoundationGameCamera
             }
         }
 
-        private void pictureBox_License_Click(object sender, EventArgs e)
+        private void PictureBox_License_Click(object sender, EventArgs e)
         {
             var licenseFile = "License.txt";
 
