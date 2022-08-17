@@ -91,7 +91,7 @@ namespace LaunchFoundationGameCamera
             Process.Start(psi);
         }
 
-        private void StartGameCamera()
+        private bool StartGameCamera()
         {
             Logger.LogLine("Starting Game Camera");
 
@@ -102,24 +102,26 @@ namespace LaunchFoundationGameCamera
                 if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.GameCamera.dll", CommonResourcePath))
                 {
                     Logger.LogLine("Cannot unpack the resource");
-                    return;
+                    return false;
                 }
 
                 if (DllInjector.Inject(processId, CommonResourcePath))
                 {
                     Logger.LogLine("Finished successfully");
+                    return true;
                 }
             }
             else
             {
                 Logger.LogLine("No supported game is running");
-                return;
             }
+
+            return false;
         }
 
-        private void StartFoVFix()
+        private bool StartFoVFix()
         {
-            Logger.LogLine("Starting FoV fix");
+            Logger.LogLine("Starting FoV Fix");
 
             // Try to find the game process id.
 
@@ -132,26 +134,28 @@ namespace LaunchFoundationGameCamera
                     if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.FoV_ROTTR.dll", CommonResourcePath))
                     {
                         Logger.LogLine("Cannot unpack the resource");
-                        return;
+                        return false;
                     }
                 }
                 else if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.FoV_SOTTR.dll", CommonResourcePath))
                 {
                     Logger.LogLine("Cannot unpack the resource");
-                    return;
+                    return false;
                 }
 
 
                 if (DllInjector.Inject(processId, CommonResourcePath))
                 {
                     Logger.LogLine("Finished successfully");
+                    return true;
                 }
             }
             else
             {
                 Logger.LogLine("No supported game is running");
-                return;
             }
+
+            return false;
         }
 
         private void LauncherWindow_Load(object sender, EventArgs e)
@@ -176,12 +180,18 @@ namespace LaunchFoundationGameCamera
 
         private void Button_Start_Click(object sender, EventArgs e)
         {
-            StartGameCamera();
+            if(!StartGameCamera())
+            {
+                MessageBox.Show("Process failed, check the log file for details!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void Button_LoadFovFix_Click(object sender, EventArgs e)
         {
-            StartFoVFix();
+            if(!StartFoVFix())
+            {
+                MessageBox.Show("Process failed, check the log file for details!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void LauncherWindow_Shown(object sender, EventArgs e)
