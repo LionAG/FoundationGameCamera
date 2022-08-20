@@ -274,6 +274,11 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 -----------------------------------------------------------
 
+This project uses the ImGui library Copyright (c) 2014-2022 Omar Cornut, MIT license
+This project uses the Kiero library Copyright (c) 2014-2021 Rebzzel, MIT license
+
+-----------------------------------------------------------
+
 Icon image by gdakaska on Pixabay [https://pixabay.com/vectors/camera-icon-take-a-photo-1724286]
 Github icon by imnamlas on Pixabay [https://pixabay.com/vectors/github-github-logo-github-icon-6980894]
 License icon by mcmurryjulie on Pixabay [https://pixabay.com/vectors/license-icon-legal-icon-2793454/]
