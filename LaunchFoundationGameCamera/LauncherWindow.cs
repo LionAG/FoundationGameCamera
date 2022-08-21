@@ -9,16 +9,16 @@ namespace LaunchFoundationGameCamera
 
         public readonly string RepositoryOwner = "Nesae-avi";
         public readonly string RepositoryName = "FoundationGameCamera";
-        private readonly string ElementInvite = "matrix.to/#/!RkOTHGOlafTBzYSfzC:matrix.org?via=matrix.org";
+        private readonly string DiscordInvite = "discord.gg/VkskjDfJ";
 
-        private string ElementInviteLink => ElementInvite.Insert(0, "https://");
+        private string DiscordInviteLink => DiscordInvite.Insert(0, "https://");
         private string GithubRepositoryLink => $"https://github.com/{RepositoryOwner}/{RepositoryName}";
         private string CommonResourcePath => Path.Combine(Path.GetTempPath(), "GameCameraMod.dll");
 
         enum Website
         {
             Github,
-            Element
+            Discord
         }
 
         private readonly List<string> SupportedGames = new()
@@ -80,7 +80,7 @@ namespace LaunchFoundationGameCamera
             switch (site)
             {
                 case Website.Github: link = GithubRepositoryLink; break;
-                case Website.Element: link = ElementInviteLink; break;
+                case Website.Discord: link = DiscordInviteLink; break;
                 default: break;
             }
 
@@ -176,7 +176,7 @@ namespace LaunchFoundationGameCamera
 
         private void Label_Supportinfo_Click(object sender, EventArgs e)
         {
-            OpenWebsite(Website.Element);
+            OpenWebsite(Website.Discord);
         }
 
         private void Button_Start_Click(object sender, EventArgs e)
@@ -236,7 +236,7 @@ namespace LaunchFoundationGameCamera
 
         private void Label_ClickHere_Click(object sender, EventArgs e)
         {
-            OpenWebsite(Website.Element);
+            OpenWebsite(Website.Discord);
         }
     }
 }

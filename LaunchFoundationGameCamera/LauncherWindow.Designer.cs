@@ -160,9 +160,9 @@
             this.label_Supportinfo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label_Supportinfo.Location = new System.Drawing.Point(3, 0);
             this.label_Supportinfo.Name = "label_Supportinfo";
-            this.label_Supportinfo.Size = new System.Drawing.Size(564, 43);
+            this.label_Supportinfo.Size = new System.Drawing.Size(531, 43);
             this.label_Supportinfo.TabIndex = 1;
-            this.label_Supportinfo.Text = "For support, troubleshooting and sharing screen captures join the element chat:";
+            this.label_Supportinfo.Text = "For support, troubleshooting and issue reporting join the Discord chat:";
             this.label_Supportinfo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label_Supportinfo.Click += new System.EventHandler(this.Label_Supportinfo_Click);
             // 
@@ -171,7 +171,7 @@
             this.label_ClickHere.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label_ClickHere.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label_ClickHere.ForeColor = System.Drawing.Color.LightBlue;
-            this.label_ClickHere.Location = new System.Drawing.Point(573, 0);
+            this.label_ClickHere.Location = new System.Drawing.Point(540, 0);
             this.label_ClickHere.Name = "label_ClickHere";
             this.label_ClickHere.Size = new System.Drawing.Size(91, 43);
             this.label_ClickHere.TabIndex = 2;
