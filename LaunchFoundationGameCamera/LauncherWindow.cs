@@ -5,34 +5,7 @@ namespace LaunchFoundationGameCamera
 {
     public partial class LauncherWindow : Form
     {
-        // wingdi.h
-        [System.Runtime.InteropServices.DllImport("gdi32.dll")]
-        private static extern IntPtr AddFontMemResourceEx(IntPtr pbFont,
-                                                          uint cbFont,
-                                                          IntPtr pdv,
-                                                          [System.Runtime.InteropServices.In] ref uint pcFonts);
-
-        private PrivateFontCollection fonts = new();
-        protected Font GetFontFromMemory(byte[] data, float size, FontStyle style = FontStyle.Regular)
-        {
-            // Loading fonts, credits to knighter (https://stackoverflow.com/questions/556147/how-do-i-embed-my-own-fonts-in-a-winforms-app)
-
-            IntPtr fontPtr = System.Runtime.InteropServices.Marshal.AllocCoTaskMem(data.Length);
-            System.Runtime.InteropServices.Marshal.Copy(data, 0, fontPtr, data.Length);
-
-            uint dummy = 0;
-            fonts.AddMemoryFont(fontPtr, data.Length);
-            AddFontMemResourceEx(fontPtr, (uint)data.Length, IntPtr.Zero, ref dummy);
-            System.Runtime.InteropServices.Marshal.FreeCoTaskMem(fontPtr);
-
-            return new Font(fonts.Families[0], size, style);
-        }
-
-        enum Website
-        {
-            Github,
-            Element
-        }
+        private readonly PrivateFontCollection Fonts = new();
 
         public readonly string RepositoryOwner = "Nesae-avi";
         public readonly string RepositoryName = "FoundationGameCamera";
@@ -41,6 +14,12 @@ namespace LaunchFoundationGameCamera
         private string ElementInviteLink => ElementInvite.Insert(0, "https://");
         private string GithubRepositoryLink => $"https://github.com/{RepositoryOwner}/{RepositoryName}";
         private string CommonResourcePath => Path.Combine(Path.GetTempPath(), "GameCameraMod.dll");
+
+        enum Website
+        {
+            Github,
+            Element
+        }
 
         private readonly List<string> SupportedGames = new()
         {
@@ -51,6 +30,28 @@ namespace LaunchFoundationGameCamera
         public LauncherWindow()
         {
             InitializeComponent();
+        }
+
+        // wingdi.h
+        [System.Runtime.InteropServices.DllImport("gdi32.dll")]
+        private static extern IntPtr AddFontMemResourceEx(IntPtr pbFont,
+                                                          uint cbFont,
+                                                          IntPtr pdv,
+                                                          [System.Runtime.InteropServices.In] ref uint pcFonts);
+
+        protected Font GetFontFromMemory(byte[] data, float size, FontStyle style = FontStyle.Regular)
+        {
+            // Loading fonts, credits to knighter (https://stackoverflow.com/questions/556147/how-do-i-embed-my-own-fonts-in-a-winforms-app)
+
+            IntPtr fontPtr = System.Runtime.InteropServices.Marshal.AllocCoTaskMem(data.Length);
+            System.Runtime.InteropServices.Marshal.Copy(data, 0, fontPtr, data.Length);
+
+            uint dummy = 0;
+            Fonts.AddMemoryFont(fontPtr, data.Length);
+            AddFontMemResourceEx(fontPtr, (uint)data.Length, IntPtr.Zero, ref dummy);
+            System.Runtime.InteropServices.Marshal.FreeCoTaskMem(fontPtr);
+
+            return new Font(Fonts.Families[0], size, style);
         }
 
         /// <summary>
