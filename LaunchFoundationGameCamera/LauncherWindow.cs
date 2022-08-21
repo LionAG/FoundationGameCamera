@@ -203,17 +203,7 @@ namespace LaunchFoundationGameCamera
             {
                 if (updater.IsUpdateAvailable())
                 {
-                    var latestVersion = updater.GetLatestVersionFromTag();
-
-                    if (MessageBox.Show($"The application will update to version {latestVersion} and restart automatically.",
-                                        "Update check",
-                                        MessageBoxButtons.OKCancel,
-                                        MessageBoxIcon.Asterisk) == DialogResult.OK)
-                    {
-                        updater.TryUpdateApplication();
-                    }
-
-                    Application.Exit();
+                    updater.TryUpdateApplication();
                 }
             }
             catch (Exception ex)
