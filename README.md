@@ -6,7 +6,7 @@ A camera mod for the Foundation Engine.
 ## How to use
 
 1. Download the latest launcher version.
-2. Start **Rise of the Tomb Raider** and load your saved game. [FoV fix can be used for both Rise & Shadow]
+2. Start **Rise of the Tomb Raider** and load your saved game. [FoV mod can be used for both Rise & Shadow]
 3. In the launcher app click on the appropriate button.
 4. Enjoy!
 
