@@ -20,7 +20,7 @@ A camera mod for the Foundation Engine.
 | Display/Hide the overlay | HOME |
 | Camera movement | ARROW KEYS |
 | Camera move up | SPACE |
-| Camera move down | CONTROL |
+| Camera move down | ALT |
 | Disable the mod | END |
 
 ## Known issues
