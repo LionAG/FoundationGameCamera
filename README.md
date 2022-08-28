@@ -10,7 +10,8 @@ A camera mod for the Foundation Engine.
 3. In the launcher app click on the appropriate button.
 4. Enjoy!
 
-Do not use both mods at the same time.
+- Do not use both mods at the same time.
+- If you get an error saying that .NET runtime is missing you need to download and install [this](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-6.0.8-windows-x64-installer)
 
 ## Key Bindings
 
@@ -22,7 +23,7 @@ Do not use both mods at the same time.
 | Camera move down | CONTROL |
 | Disable the mod | END |
 
-## Notes
+## Known issues
 
 This project is still under development. As such some things may work partially and/or incorrectly.
 
