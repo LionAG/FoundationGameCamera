@@ -18,7 +18,10 @@ A camera mod for the Foundation Engine.
 | Command / Action | Key |
 | --- | --- |
 | Display/Hide the overlay | HOME |
-| Camera movement | ARROW KEYS |
+| Camera forward | W |
+| Camera backward | S |
+| Camera left | A |
+| Camera right | D |
 | Camera move up | SPACE |
 | Camera move down | ALT |
 | Disable the mod | END |
