@@ -78,9 +78,9 @@
             // 
             this.pictureBox_License.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox_License.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox_License.Image")));
-            this.pictureBox_License.Location = new System.Drawing.Point(683, 158);
+            this.pictureBox_License.Location = new System.Drawing.Point(688, 163);
             this.pictureBox_License.Name = "pictureBox_License";
-            this.pictureBox_License.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox_License.Size = new System.Drawing.Size(30, 30);
             this.pictureBox_License.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox_License.TabIndex = 4;
             this.pictureBox_License.TabStop = false;
@@ -100,7 +100,7 @@
             this.button_LoadFovFix.Name = "button_LoadFovFix";
             this.button_LoadFovFix.Size = new System.Drawing.Size(276, 54);
             this.button_LoadFovFix.TabIndex = 3;
-            this.button_LoadFovFix.Text = "LOAD FoV FIX";
+            this.button_LoadFovFix.Text = "LOAD FoV MOD";
             this.button_LoadFovFix.UseVisualStyleBackColor = false;
             this.button_LoadFovFix.Click += new System.EventHandler(this.Button_LoadFovFix_Click);
             // 
@@ -108,9 +108,9 @@
             // 
             this.pictureBox_Github.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox_Github.Image = global::LaunchFoundationGameCamera.Properties.Resources.github_logo_pixabayg767c696ab_640;
-            this.pictureBox_Github.Location = new System.Drawing.Point(637, 158);
+            this.pictureBox_Github.Location = new System.Drawing.Point(651, 163);
             this.pictureBox_Github.Name = "pictureBox_Github";
-            this.pictureBox_Github.Size = new System.Drawing.Size(40, 40);
+            this.pictureBox_Github.Size = new System.Drawing.Size(30, 30);
             this.pictureBox_Github.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox_Github.TabIndex = 2;
             this.pictureBox_Github.TabStop = false;
