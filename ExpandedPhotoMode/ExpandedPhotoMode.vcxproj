@@ -137,6 +137,7 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BaseTypes.h" />
     <ClInclude Include="IPhotoMode.hpp" />
     <ClInclude Include="sdk.hpp" />
   </ItemGroup>

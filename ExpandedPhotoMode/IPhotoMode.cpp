@@ -48,6 +48,13 @@ void Nesae::ExpandedPhotoMode::IPhotoMode::DisableOverride()
 Nesae::ExpandedPhotoMode::IPhotoMode::IPhotoMode()
 {
     EnableOverride();
+
+    for (Vec3 pos : this->SavedPosition)
+    {
+        pos.x = 0;
+        pos.y = 0;
+        pos.z = 0;
+    }
 }
 
 Nesae::ExpandedPhotoMode::IPhotoMode::~IPhotoMode()
@@ -102,4 +109,24 @@ void Nesae::ExpandedPhotoMode::IPhotoMode::ChangeFoV(float amount)
         fov = 0.1f;
 
     this->GetInstance()->FoV = fov;
+}
+
+void Nesae::ExpandedPhotoMode::IPhotoMode::SavePosition(int index)
+{
+    auto instance = this->GetInstance();
+
+    this->SavedPosition[index].x = instance->X;
+    this->SavedPosition[index].y = instance->Y;
+    this->SavedPosition[index].z = instance->Z;
+
+    Beep(500, 100);
+}
+
+void Nesae::ExpandedPhotoMode::IPhotoMode::RestorePosition(int index)
+{
+    auto instance = this->GetInstance();
+
+    instance->X = this->SavedPosition[index].x;
+    instance->Y = this->SavedPosition[index].y;
+    instance->Z = this->SavedPosition[index].z;
 }

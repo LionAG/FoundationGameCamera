@@ -1,5 +1,6 @@
 #include <Windows.h>
 #include <iostream>
+#include <map>
 
 #include "IPhotoMode.hpp"
 
@@ -16,9 +17,11 @@ void InitalizeConsole()
     SetConsoleTitle(L"FoundationGameCamera");
 
     std::wcout << "Expanded Photo Mode mod for Shadow of the Tomb Raider\n\n";
-    std::wcout << "Use R and T to adjust roll\n";
-    std::wcout << "Use F and G to adjust fov\n";
-    std::wcout << "Use END to unload while not using the photographer mode.";
+    std::wcout << "Press R and T to adjust roll\n";
+    std::wcout << "Press F and G to adjust fov\n";
+    std::wcout << "Press F1 - F9 to save the camera position\n";
+    std::wcout << "Press 1 - 9 to restore the camera position\n";
+    std::wcout << "Press END to unload while not using the photographer mode.";
 }
 
 void RemoveConsole()
@@ -31,9 +34,28 @@ void RemoveConsole()
 DWORD __stdcall MainThread(HMODULE thisModule)
 {
     InitalizeConsole();
+    
+    struct CameraTeleportKey
+    {
+        DWORD KeySave;
+        DWORD KeyRestore;
+    };
+
+    std::map<unsigned int, CameraTeleportKey> camera_teleport_keys
+    {
+        { 0, {VK_F1, 0x31} },
+        { 1, {VK_F2, 0x32} },
+        { 2, {VK_F3, 0x33} },
+        { 3, {VK_F4, 0x34} },
+        { 4, {VK_F5, 0x35} },
+        { 5, {VK_F6, 0x36} },
+        { 6, {VK_F7, 0x37} },
+        { 7, {VK_F8, 0x38} },
+        { 8, {VK_F9, 0x39} },
+    };
 
     auto iPhotoMode = new Nesae::ExpandedPhotoMode::IPhotoMode;
-    
+
     while (true)
     {
         if (iPhotoMode->IsPhotoMode())
@@ -49,6 +71,15 @@ DWORD __stdcall MainThread(HMODULE thisModule)
 
             if (GetAsyncKeyState(0x47)) // G
                 iPhotoMode->ChangeFoV(-0.01f);
+
+            for (auto& [key, value] : camera_teleport_keys)
+            {
+                if (GetAsyncKeyState(value.KeySave))
+                    iPhotoMode->SavePosition(key);
+
+                if (GetAsyncKeyState(value.KeyRestore))
+                    iPhotoMode->RestorePosition(key);
+            }
         }
 
         if (GetAsyncKeyState(VK_END))
