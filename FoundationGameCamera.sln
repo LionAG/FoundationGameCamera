@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LaunchFoundationGameCamera", "LaunchFoundationGameCamera\LaunchFoundationGameCamera.csproj", "{4F8FFDD1-6BAB-4286-BE39-B9CABEEBA8FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{55570819-7BE9-4C54-BD14-72E9A9BC913C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ExpandedPhotoMode", "ExpandedPhotoMode\ExpandedPhotoMode.vcxproj", "{0FF54111-F167-4125-A58F-35E68DA3173C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4F8FFDD1-6BAB-4286-BE39-B9CABEEBA8FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4F8FFDD1-6BAB-4286-BE39-B9CABEEBA8FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4F8FFDD1-6BAB-4286-BE39-B9CABEEBA8FE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{4F8FFDD1-6BAB-4286-BE39-B9CABEEBA8FE}.Debug|x64.Build.0 = Debug|Any CPU
+		{4F8FFDD1-6BAB-4286-BE39-B9CABEEBA8FE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{4F8FFDD1-6BAB-4286-BE39-B9CABEEBA8FE}.Debug|x86.Build.0 = Debug|Any CPU
+		{4F8FFDD1-6BAB-4286-BE39-B9CABEEBA8FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4F8FFDD1-6BAB-4286-BE39-B9CABEEBA8FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4F8FFDD1-6BAB-4286-BE39-B9CABEEBA8FE}.Release|x64.ActiveCfg = Release|Any CPU
+		{4F8FFDD1-6BAB-4286-BE39-B9CABEEBA8FE}.Release|x64.Build.0 = Release|Any CPU
+		{4F8FFDD1-6BAB-4286-BE39-B9CABEEBA8FE}.Release|x86.ActiveCfg = Release|Any CPU
+		{4F8FFDD1-6BAB-4286-BE39-B9CABEEBA8FE}.Release|x86.Build.0 = Release|Any CPU
+		{0FF54111-F167-4125-A58F-35E68DA3173C}.Debug|Any CPU.ActiveCfg = Debug|x64
+		{0FF54111-F167-4125-A58F-35E68DA3173C}.Debug|Any CPU.Build.0 = Debug|x64
+		{0FF54111-F167-4125-A58F-35E68DA3173C}.Debug|x64.ActiveCfg = Debug|x64
+		{0FF54111-F167-4125-A58F-35E68DA3173C}.Debug|x64.Build.0 = Debug|x64
+		{0FF54111-F167-4125-A58F-35E68DA3173C}.Debug|x86.ActiveCfg = Debug|Win32
+		{0FF54111-F167-4125-A58F-35E68DA3173C}.Debug|x86.Build.0 = Debug|Win32
+		{0FF54111-F167-4125-A58F-35E68DA3173C}.Release|Any CPU.ActiveCfg = Release|x64
+		{0FF54111-F167-4125-A58F-35E68DA3173C}.Release|Any CPU.Build.0 = Release|x64
+		{0FF54111-F167-4125-A58F-35E68DA3173C}.Release|x64.ActiveCfg = Release|x64
+		{0FF54111-F167-4125-A58F-35E68DA3173C}.Release|x64.Build.0 = Release|x64
+		{0FF54111-F167-4125-A58F-35E68DA3173C}.Release|x86.ActiveCfg = Release|Win32
+		{0FF54111-F167-4125-A58F-35E68DA3173C}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9B611E86-032C-4496-A0C2-BC607C67EE6E}
+	EndGlobalSection
+EndGlobal
