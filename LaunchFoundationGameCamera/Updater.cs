@@ -1,5 +1,6 @@
 ﻿using Octokit;
 using System.Diagnostics;
+using System.Reflection;
 
 namespace LaunchFoundationGameCamera
 {
@@ -60,9 +61,17 @@ namespace LaunchFoundationGameCamera
 
                         if (launcherAsset != default)
                         {
-                            // Download the new version.
+                            // Rename the old version
 
-                            var destinationFileName = $"{AppInformation.AssemblyName}_{latest.TagName}.exe";
+                            var currentExecutableName = Path.GetFileName(System.Windows.Forms.Application.ExecutablePath);
+                            var currentExecutableNewName = Path.GetRandomFileName();
+                            var currentExecutableNewPath = Path.Combine(Directory.GetCurrentDirectory(), currentExecutableNewName);
+
+                            File.Move(currentExecutableName, currentExecutableNewName);
+
+                            // Download the new version.
+                            
+                            var destinationFileName = launcherAsset.Name;
 
                             using var client = new HttpClient();
                             using var stream = client.GetStreamAsync(launcherAsset.BrowserDownloadUrl).Result;
@@ -78,7 +87,7 @@ namespace LaunchFoundationGameCamera
 
                             Process.Start(new ProcessStartInfo()
                             {
-                                Arguments = "/C choice /C Y /N /D Y /T 2 & Del \"" + System.Windows.Forms.Application.ExecutablePath + "\"",
+                                Arguments = "/C choice /C Y /N /D Y /T 2 & Del \"" + currentExecutableNewPath + "\"",
                                 WindowStyle = ProcessWindowStyle.Hidden,
                                 CreateNoWindow = true,
                                 FileName = "cmd.exe"
