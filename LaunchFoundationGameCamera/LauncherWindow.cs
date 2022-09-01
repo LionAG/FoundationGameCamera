@@ -130,7 +130,7 @@ namespace LaunchFoundationGameCamera
 
             if (processId != 0)
             {
-                if(Process.GetProcessById(processId).MainModule?.ModuleName == "ROTTR.exe")
+                if (Process.GetProcessById(processId).MainModule?.ModuleName == "ROTTR.exe")
                 {
                     if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.FoV_ROTTR.dll", CommonResourcePath))
                     {
@@ -181,7 +181,7 @@ namespace LaunchFoundationGameCamera
 
         private void Button_Start_Click(object sender, EventArgs e)
         {
-            if(!StartGameCamera())
+            if (!StartGameCamera())
             {
                 MessageBox.Show("Process failed, check the log file for details!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -189,7 +189,7 @@ namespace LaunchFoundationGameCamera
 
         private void Button_LoadFovFix_Click(object sender, EventArgs e)
         {
-            if(!StartFoVFix())
+            if (!StartFoVFix())
             {
                 MessageBox.Show("Process failed, check the log file for details!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

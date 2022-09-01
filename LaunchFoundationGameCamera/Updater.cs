@@ -1,6 +1,5 @@
 ﻿using Octokit;
 using System.Diagnostics;
-using System.Reflection;
 
 namespace LaunchFoundationGameCamera
 {
@@ -70,7 +69,7 @@ namespace LaunchFoundationGameCamera
                             File.Move(currentExecutableName, currentExecutableNewName);
 
                             // Download the new version.
-                            
+
                             var destinationFileName = launcherAsset.Name;
 
                             using var client = new HttpClient();
