@@ -79,7 +79,7 @@ namespace LaunchFoundationGameCamera
                 ResourceUnpacker.Unpack("LaunchFoundationGameCamera.License.txt", licenseFilePath);
             }
 
-            Process.Start("notepad.exe", licenseFile);
+            Process.Start("notepad.exe", licenseFilePath);
         }
 
         private void LauncherWindow_Load(object sender, EventArgs e)
