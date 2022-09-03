@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace LaunchFoundationGameCamera.Styling
+﻿namespace LaunchFoundationGameCamera.Styling
 {
     internal class TopMenuRendererColors : ProfessionalColorTable
     {
@@ -32,10 +26,10 @@ namespace LaunchFoundationGameCamera.Styling
         {
             e.ToolStrip.BackColor = Color.Black;
             e.ToolStrip.ForeColor = Color.FromArgb(222, 222, 222);
-            
+
             base.OnRenderMenuItemBackground(e);
         }
-        
+
         //protected override void OnRenderToolStripBorder(ToolStripRenderEventArgs e)
         //{
         //    base.OnRenderToolStripBorder(e);

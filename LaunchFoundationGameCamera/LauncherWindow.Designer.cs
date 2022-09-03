@@ -46,6 +46,9 @@
             this.viewLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.launcherToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.foVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.expandedPhotoModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_Content.SuspendLayout();
             this.panel_Bottom.SuspendLayout();
             this.panel_Middle.SuspendLayout();
@@ -175,7 +178,8 @@
             // 
             this.menuStrip1.BackColor = System.Drawing.Color.Black;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.launcherToolStripMenuItem});
+            this.launcherToolStripMenuItem,
+            this.launcherToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(726, 24);
@@ -235,6 +239,30 @@
             this.closeToolStripMenuItem1.Text = "Close";
             this.closeToolStripMenuItem1.Click += new System.EventHandler(this.CloseToolStripMenuItem1_Click);
             // 
+            // launcherToolStripMenuItem1
+            // 
+            this.launcherToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.foVToolStripMenuItem,
+            this.expandedPhotoModeToolStripMenuItem});
+            this.launcherToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
+            this.launcherToolStripMenuItem1.Name = "launcherToolStripMenuItem1";
+            this.launcherToolStripMenuItem1.Size = new System.Drawing.Size(68, 20);
+            this.launcherToolStripMenuItem1.Text = "Launcher";
+            // 
+            // foVToolStripMenuItem
+            // 
+            this.foVToolStripMenuItem.Name = "foVToolStripMenuItem";
+            this.foVToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.foVToolStripMenuItem.Text = "FoV";
+            this.foVToolStripMenuItem.Click += new System.EventHandler(this.FoVToolStripMenuItem_Click);
+            // 
+            // expandedPhotoModeToolStripMenuItem
+            // 
+            this.expandedPhotoModeToolStripMenuItem.Name = "expandedPhotoModeToolStripMenuItem";
+            this.expandedPhotoModeToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.expandedPhotoModeToolStripMenuItem.Text = "Expanded Photo Mode";
+            this.expandedPhotoModeToolStripMenuItem.Click += new System.EventHandler(this.ExpandedPhotoModeToolStripMenuItem_Click);
+            // 
             // LauncherWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -283,5 +311,8 @@
         private ToolStripMenuItem viewLicenseToolStripMenuItem;
         private ToolStripMenuItem closeToolStripMenuItem;
         private ToolStripMenuItem closeToolStripMenuItem1;
+        private ToolStripMenuItem launcherToolStripMenuItem1;
+        private ToolStripMenuItem foVToolStripMenuItem;
+        private ToolStripMenuItem expandedPhotoModeToolStripMenuItem;
     }
 }

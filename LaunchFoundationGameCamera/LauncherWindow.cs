@@ -1,3 +1,4 @@
+using LaunchFoundationGameCamera.Components;
 using LaunchFoundationGameCamera.Styling;
 using System.Diagnostics;
 using System.Drawing.Text;
@@ -7,6 +8,7 @@ namespace LaunchFoundationGameCamera
     public partial class LauncherWindow : Form
     {
         private readonly PrivateFontCollection Fonts = new();
+        private readonly ModLauncher Launcher = new();
 
         public readonly string RepositoryOwner = "Nesae-avi";
         public readonly string RepositoryName = "FoundationGameCamera";
@@ -14,19 +16,12 @@ namespace LaunchFoundationGameCamera
 
         private string DiscordInviteLink => DiscordInvite.Insert(0, "https://");
         private string GithubRepositoryLink => $"https://github.com/{RepositoryOwner}/{RepositoryName}";
-        private string CommonResourcePath => Path.Combine(Path.GetTempPath(), "GameCameraMod.dll");
 
         enum Website
         {
             Github,
             Discord
         }
-
-        private readonly List<string> SupportedGames = new()
-        {
-            "ROTTR.exe",
-            "SOTTR.exe" // Keep this only for the FOV Fix.
-        };
 
         public LauncherWindow()
         {
@@ -53,25 +48,6 @@ namespace LaunchFoundationGameCamera
             System.Runtime.InteropServices.Marshal.FreeCoTaskMem(fontPtr);
 
             return new Font(Fonts.Families[0], size, style);
-        }
-
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <returns>Game process id</returns>
-        private int FindGameProcess()
-        {
-            // Try to find the game process id.
-
-            foreach (var game in SupportedGames)
-            {
-                var processId = DllInjector.GetProcessId(game);
-
-                if (processId != 0)
-                    return processId;
-            }
-
-            return 0;
         }
 
         private void OpenWebsite(Website site)
@@ -106,77 +82,10 @@ namespace LaunchFoundationGameCamera
             Process.Start("notepad.exe", licenseFile);
         }
 
-        private bool StartGameCamera()
-        {
-            Logger.LogLine("Starting Game Camera");
-
-            int processId = FindGameProcess();
-
-            if (processId != 0)
-            {
-                if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.GameCamera.dll", CommonResourcePath))
-                {
-                    Logger.LogLine("Cannot unpack the resource");
-                    return false;
-                }
-
-                if (DllInjector.Inject(processId, CommonResourcePath))
-                {
-                    Logger.LogLine("Finished successfully");
-                    return true;
-                }
-            }
-            else
-            {
-                Logger.LogLine("No supported game is running");
-            }
-
-            return false;
-        }
-
-        private bool StartFoVFix()
-        {
-            Logger.LogLine("Starting FoV Fix");
-
-            // Try to find the game process id.
-
-            int processId = FindGameProcess();
-
-            if (processId != 0)
-            {
-                if (Process.GetProcessById(processId).MainModule?.ModuleName == "ROTTR.exe")
-                {
-                    if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.FoV_ROTTR.dll", CommonResourcePath))
-                    {
-                        Logger.LogLine("Cannot unpack the resource");
-                        return false;
-                    }
-                }
-                else if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.FoV_SOTTR.dll", CommonResourcePath))
-                {
-                    Logger.LogLine("Cannot unpack the resource");
-                    return false;
-                }
-
-
-                if (DllInjector.Inject(processId, CommonResourcePath))
-                {
-                    Logger.LogLine("Finished successfully");
-                    return true;
-                }
-            }
-            else
-            {
-                Logger.LogLine("No supported game is running");
-            }
-
-            return false;
-        }
-
         private void LauncherWindow_Load(object sender, EventArgs e)
         {
             Text = $"Foundation Game Camera Launcher v{AppInformation.AssemblyVersion}";
-            
+
             label_Header.Font = GetFontFromMemory(FontResource.PatrickHandSC_Regular, 14.0f, FontStyle.Bold);
             label_ClickHere.Font = GetFontFromMemory(FontResource.Lato_Bold, 10.0f, FontStyle.Bold);
             label_LoadingInfo.Font = GetFontFromMemory(FontResource.Lato_Regular, 10.0f);
@@ -192,15 +101,7 @@ namespace LaunchFoundationGameCamera
 
         private void Button_Start_Click(object sender, EventArgs e)
         {
-            if (!StartGameCamera())
-            {
-                MessageBox.Show("Process failed, check the log file for details!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        private void Button_LoadFovFix_Click(object sender, EventArgs e)
-        {
-            if (!StartFoVFix())
+            if (!Launcher.StartGameCamera())
             {
                 MessageBox.Show("Process failed, check the log file for details!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -244,7 +145,7 @@ namespace LaunchFoundationGameCamera
         {
             OpenLicense();
         }
-        
+
         private void CloseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var updater = new Updater(RepositoryName, RepositoryOwner);
@@ -253,7 +154,7 @@ namespace LaunchFoundationGameCamera
             {
                 if (updater.IsUpdateAvailable())
                 {
-                    if(MessageBox.Show($"Update to version {updater.GetLatestVersionFromTag()} is available. Do you want to download it now?",
+                    if (MessageBox.Show($"Update to version {updater.GetLatestVersionFromTag()} is available. Do you want to download it now?",
                                     "Update check",
                                     MessageBoxButtons.YesNo,
                                     MessageBoxIcon.Question) == DialogResult.Yes)
@@ -275,6 +176,22 @@ namespace LaunchFoundationGameCamera
         private void CloseToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void FoVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Launcher.StartFoV())
+            {
+                MessageBox.Show("Process failed, check the log file for details!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ExpandedPhotoModeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Launcher.StartExpandedPhotoMode())
+            {
+                MessageBox.Show("Process failed, check the log file for details!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

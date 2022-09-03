@@ -1,7 +1,7 @@
 ﻿using Octokit;
 using System.Diagnostics;
 
-namespace LaunchFoundationGameCamera
+namespace LaunchFoundationGameCamera.Components
 {
     internal class Updater
     {

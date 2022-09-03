@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace LaunchFoundationGameCamera
+namespace LaunchFoundationGameCamera.Components
 {
     internal class ResourceUnpacker
     {

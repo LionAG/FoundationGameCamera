@@ -2,7 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace LaunchFoundationGameCamera
+namespace LaunchFoundationGameCamera.Components
 {
     internal static class DllInjector
     {
