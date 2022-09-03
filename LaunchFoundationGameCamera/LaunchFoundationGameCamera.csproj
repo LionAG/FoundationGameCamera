@@ -28,6 +28,10 @@
     <None Remove="Fonts\Lato\Lato-Regular.ttf" />
     <None Remove="Fonts\Patrick_Hand_SC\PatrickHandSC-Regular.ttf" />
     <None Remove="License.txt" />
+    <None Remove="Mod\ExpandedPhotoMode.dll" />
+    <None Remove="Mod\FoV_ROTTR.dll" />
+    <None Remove="Mod\FoV_SOTTR.dll" />
+    <None Remove="Mod\GameCamera_ROTTR_D3D11.dll" />
   </ItemGroup>
 
   <ItemGroup>
@@ -35,6 +39,10 @@
     <EmbeddedResource Include="Fonts\Lato\Lato-Regular.ttf" />
     <EmbeddedResource Include="License.txt" />
     <EmbeddedResource Include="Fonts\Patrick_Hand_SC\PatrickHandSC-Regular.ttf" />
+    <EmbeddedResource Include="Mod\ExpandedPhotoMode.dll" />
+    <EmbeddedResource Include="Mod\FoV_ROTTR.dll" />
+    <EmbeddedResource Include="Mod\FoV_SOTTR.dll" />
+    <EmbeddedResource Include="Mod\GameCamera_ROTTR_D3D11.dll" />
     <Content Include="Pictures\camera-pixabay-1724286_1280.ico" />
   </ItemGroup>
 
