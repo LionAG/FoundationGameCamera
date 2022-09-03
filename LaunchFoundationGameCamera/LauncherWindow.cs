@@ -95,10 +95,11 @@ namespace LaunchFoundationGameCamera
         private void OpenLicense()
         {
             var licenseFile = "License.txt";
+            var licenseFilePath = Path.Combine(Path.GetTempPath(), licenseFile);
 
             if (File.Exists(licenseFile) == false)
             {
-                ResourceUnpacker.Unpack("LaunchFoundationGameCamera.License.txt", licenseFile);
+                ResourceUnpacker.Unpack("LaunchFoundationGameCamera.License.txt", licenseFilePath);
             }
 
             Process.Start("notepad.exe", licenseFile);
