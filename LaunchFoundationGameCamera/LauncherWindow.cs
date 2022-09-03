@@ -9,7 +9,7 @@ namespace LaunchFoundationGameCamera
 
         public readonly string RepositoryOwner = "Nesae-avi";
         public readonly string RepositoryName = "FoundationGameCamera";
-        private readonly string DiscordInvite = "discord.gg/VkskjDfJ";
+        private readonly string DiscordInvite = "discord.gg/tugaUeTvUP";
 
         private string DiscordInviteLink => DiscordInvite.Insert(0, "https://");
         private string GithubRepositoryLink => $"https://github.com/{RepositoryOwner}/{RepositoryName}";
@@ -92,6 +92,18 @@ namespace LaunchFoundationGameCamera
             Process.Start(psi);
         }
 
+        private void OpenLicense()
+        {
+            var licenseFile = "License.txt";
+
+            if (File.Exists(licenseFile) == false)
+            {
+                ResourceUnpacker.Unpack("LaunchFoundationGameCamera.License.txt", licenseFile);
+            }
+
+            Process.Start("notepad.exe", licenseFile);
+        }
+
         private bool StartGameCamera()
         {
             Logger.LogLine("Starting Game Camera");
@@ -169,11 +181,6 @@ namespace LaunchFoundationGameCamera
             label_Supportinfo.Font = GetFontFromMemory(FontResource.Lato_Regular, 10.0f);
         }
 
-        private void PictureBox_Github_Click(object sender, EventArgs e)
-        {
-            OpenWebsite(Website.Github);
-        }
-
         private void Label_Supportinfo_Click(object sender, EventArgs e)
         {
             OpenWebsite(Website.Discord);
@@ -197,6 +204,7 @@ namespace LaunchFoundationGameCamera
 
         private void LauncherWindow_Shown(object sender, EventArgs e)
         {
+#if !DEBUG
             var updater = new Updater(RepositoryName, RepositoryOwner);
 
             try
@@ -210,23 +218,54 @@ namespace LaunchFoundationGameCamera
             {
                 Logger.LogLine($"Update error: {ex.Message}");
             }
-        }
-
-        private void PictureBox_License_Click(object sender, EventArgs e)
-        {
-            var licenseFile = "License.txt";
-
-            if (File.Exists(licenseFile) == false)
-            {
-                ResourceUnpacker.Unpack("LaunchFoundationGameCamera.License.txt", licenseFile);
-            }
-
-            Process.Start("notepad.exe", licenseFile);
+#endif
         }
 
         private void Label_ClickHere_Click(object sender, EventArgs e)
         {
             OpenWebsite(Website.Discord);
+        }
+
+        private void ToolStripMenuItem_OpenGithub_Click(object sender, EventArgs e)
+        {
+            OpenWebsite(Website.Github);
+        }
+
+        private void OpenDiscordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenWebsite(Website.Discord);
+        }
+
+        private void ViewLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            OpenLicense();
+        }
+
+        private void CloseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var updater = new Updater(RepositoryName, RepositoryOwner);
+
+            try
+            {
+                if (updater.IsUpdateAvailable())
+                {
+                    if(MessageBox.Show($"Update to version {updater.GetLatestVersionFromTag()} is available. Do you want to download it now?",
+                                    "Update check",
+                                    MessageBoxButtons.YesNo,
+                                    MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        updater.TryUpdateApplication();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("No updates are available.", "Update check", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
+            }
+            catch (Exception ex)
+            {
+                Logger.LogLine($"Update error: {ex.Message}");
+            }
         }
     }
 }

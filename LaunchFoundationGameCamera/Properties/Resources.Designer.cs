@@ -110,5 +110,25 @@ namespace LaunchFoundationGameCamera.Properties {
                 return ResourceManager.GetString("License", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap license_icon_2793454_1280 {
+            get {
+                object obj = ResourceManager.GetObject("license-icon-2793454_1280", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_ge5513914d_1920 {
+            get {
+                object obj = ResourceManager.GetObject("logo-ge5513914d_1920", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
