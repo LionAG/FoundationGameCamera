@@ -130,5 +130,15 @@ namespace LaunchFoundationGameCamera.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap x_g95cc721a4_1280 {
+            get {
+                object obj = ResourceManager.GetObject("x-g95cc721a4_1280", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

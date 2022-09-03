@@ -280,9 +280,10 @@ This project uses the Octokit library Copyright (c) 2017 GitHub, Inc., MIT licen
 
 -----------------------------------------------------------
 
-Camera icon by Kate on Pixabay [https://pixabay.com/vectors/camera-icon-take-a-photo-1724286]
-Github icon by Muhammad Salman on Pixabay [https://pixabay.com/vectors/github-github-logo-github-icon-6980894]
-Discord icon by Benjamin Zocholl on Pixabay [https://pixabay.com/illustrations/logo-icon-symbol-networking-6062232] 
-License icon by mcmurryjulie on Pixabay [https://pixabay.com/vectors/license-icon-legal-icon-2793454]
+Camera picture by Kate on Pixabay [https://pixabay.com/vectors/camera-icon-take-a-photo-1724286]
+Github picture by Muhammad Salman on Pixabay [https://pixabay.com/vectors/github-github-logo-github-icon-6980894]
+Discord picture by Benjamin Zocholl on Pixabay [https://pixabay.com/illustrations/logo-icon-symbol-networking-6062232] 
+License picture by mcmurryjulie on Pixabay [https://pixabay.com/vectors/license-icon-legal-icon-2793454]
+Exit picture by Samuel1983 on Pixabay [https://pixabay.com/vectors/x-exit-button-icon-symbol-vector-1152114]
 
 -----------------------------------------------------------

@@ -1,3 +1,4 @@
+using LaunchFoundationGameCamera.Styling;
 using System.Diagnostics;
 using System.Drawing.Text;
 
@@ -175,11 +176,13 @@ namespace LaunchFoundationGameCamera
         private void LauncherWindow_Load(object sender, EventArgs e)
         {
             Text = $"Foundation Game Camera Launcher v{AppInformation.AssemblyVersion}";
-
+            
             label_Header.Font = GetFontFromMemory(FontResource.PatrickHandSC_Regular, 14.0f, FontStyle.Bold);
             label_ClickHere.Font = GetFontFromMemory(FontResource.Lato_Bold, 10.0f, FontStyle.Bold);
             label_LoadingInfo.Font = GetFontFromMemory(FontResource.Lato_Regular, 10.0f);
             label_Supportinfo.Font = GetFontFromMemory(FontResource.Lato_Regular, 10.0f);
+
+            menuStrip1.Renderer = new TopMenuRenderer();
         }
 
         private void Label_Supportinfo_Click(object sender, EventArgs e)
@@ -241,7 +244,7 @@ namespace LaunchFoundationGameCamera
         {
             OpenLicense();
         }
-
+        
         private void CloseToolStripMenuItem_Click(object sender, EventArgs e)
         {
             var updater = new Updater(RepositoryName, RepositoryOwner);
@@ -267,6 +270,11 @@ namespace LaunchFoundationGameCamera
             {
                 Logger.LogLine($"Update error: {ex.Message}");
             }
+        }
+
+        private void CloseToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

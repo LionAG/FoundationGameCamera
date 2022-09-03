@@ -45,6 +45,7 @@
             this.openDiscordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.closeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_Content.SuspendLayout();
             this.panel_Bottom.SuspendLayout();
             this.panel_Middle.SuspendLayout();
@@ -77,10 +78,10 @@
             // 
             this.button_Start.BackColor = System.Drawing.Color.Red;
             this.button_Start.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_Start.FlatAppearance.BorderColor = System.Drawing.Color.Indigo;
+            this.button_Start.FlatAppearance.BorderColor = System.Drawing.Color.Red;
             this.button_Start.FlatAppearance.BorderSize = 0;
-            this.button_Start.FlatAppearance.MouseDownBackColor = System.Drawing.Color.SlateBlue;
-            this.button_Start.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSlateBlue;
+            this.button_Start.FlatAppearance.MouseDownBackColor = System.Drawing.Color.OrangeRed;
+            this.button_Start.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkRed;
             this.button_Start.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_Start.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.button_Start.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
@@ -88,7 +89,7 @@
             this.button_Start.Name = "button_Start";
             this.button_Start.Size = new System.Drawing.Size(726, 96);
             this.button_Start.TabIndex = 1;
-            this.button_Start.Text = "LOAD GAME CAMERA";
+            this.button_Start.Text = "START";
             this.button_Start.UseVisualStyleBackColor = false;
             this.button_Start.Click += new System.EventHandler(this.Button_Start_Click);
             // 
@@ -187,17 +188,18 @@
             this.toolStripMenuItem_OpenGithub,
             this.openDiscordToolStripMenuItem,
             this.viewLicenseToolStripMenuItem,
-            this.closeToolStripMenuItem});
+            this.closeToolStripMenuItem,
+            this.closeToolStripMenuItem1});
             this.launcherToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
             this.launcherToolStripMenuItem.Name = "launcherToolStripMenuItem";
-            this.launcherToolStripMenuItem.Size = new System.Drawing.Size(68, 20);
-            this.launcherToolStripMenuItem.Text = "Launcher";
+            this.launcherToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.launcherToolStripMenuItem.Text = "Application";
             // 
             // toolStripMenuItem_OpenGithub
             // 
             this.toolStripMenuItem_OpenGithub.Image = global::LaunchFoundationGameCamera.Properties.Resources.github_logo_pixabayg767c696ab_640;
             this.toolStripMenuItem_OpenGithub.Name = "toolStripMenuItem_OpenGithub";
-            this.toolStripMenuItem_OpenGithub.Size = new System.Drawing.Size(170, 22);
+            this.toolStripMenuItem_OpenGithub.Size = new System.Drawing.Size(153, 22);
             this.toolStripMenuItem_OpenGithub.Text = "Open GitHub";
             this.toolStripMenuItem_OpenGithub.Click += new System.EventHandler(this.ToolStripMenuItem_OpenGithub_Click);
             // 
@@ -205,7 +207,7 @@
             // 
             this.openDiscordToolStripMenuItem.Image = global::LaunchFoundationGameCamera.Properties.Resources.logo_ge5513914d_1920;
             this.openDiscordToolStripMenuItem.Name = "openDiscordToolStripMenuItem";
-            this.openDiscordToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.openDiscordToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
             this.openDiscordToolStripMenuItem.Text = "Open Discord";
             this.openDiscordToolStripMenuItem.Click += new System.EventHandler(this.OpenDiscordToolStripMenuItem_Click);
             // 
@@ -213,17 +215,25 @@
             // 
             this.viewLicenseToolStripMenuItem.Image = global::LaunchFoundationGameCamera.Properties.Resources.license_icon_2793454_1280;
             this.viewLicenseToolStripMenuItem.Name = "viewLicenseToolStripMenuItem";
-            this.viewLicenseToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.viewLicenseToolStripMenuItem.Text = "View license";
+            this.viewLicenseToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.viewLicenseToolStripMenuItem.Text = "View License";
             this.viewLicenseToolStripMenuItem.Click += new System.EventHandler(this.ViewLicenseToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Image = global::LaunchFoundationGameCamera.Properties.Resources.camera_pixabay_1724286_12801;
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.closeToolStripMenuItem.Text = "Check for updates";
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.closeToolStripMenuItem.Text = "Check Updates";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.CloseToolStripMenuItem_Click);
+            // 
+            // closeToolStripMenuItem1
+            // 
+            this.closeToolStripMenuItem1.Image = global::LaunchFoundationGameCamera.Properties.Resources.x_g95cc721a4_1280;
+            this.closeToolStripMenuItem1.Name = "closeToolStripMenuItem1";
+            this.closeToolStripMenuItem1.Size = new System.Drawing.Size(153, 22);
+            this.closeToolStripMenuItem1.Text = "Close";
+            this.closeToolStripMenuItem1.Click += new System.EventHandler(this.CloseToolStripMenuItem1_Click);
             // 
             // LauncherWindow
             // 
@@ -272,5 +282,6 @@
         private ToolStripMenuItem openDiscordToolStripMenuItem;
         private ToolStripMenuItem viewLicenseToolStripMenuItem;
         private ToolStripMenuItem closeToolStripMenuItem;
+        private ToolStripMenuItem closeToolStripMenuItem1;
     }
 }
