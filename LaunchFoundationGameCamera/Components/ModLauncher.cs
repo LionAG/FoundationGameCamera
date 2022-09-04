@@ -2,104 +2,147 @@
 
 namespace LaunchFoundationGameCamera.Components
 {
+    internal class ModEntryData
+    {
+        public string GameExecutable { get; init; }
+        public string ModFileResource { get; init; }
+
+        public ModEntryData(string gameExecutable, string modFileResource)
+        {
+            GameExecutable = gameExecutable;
+            ModFileResource = modFileResource;
+        }
+    }
+
     internal class ModLauncher
     {
         private string CommonResourcePath => Path.Combine(Path.GetTempPath(), "GameCameraMod.dll");
 
-        private readonly Dictionary<string, string[]> SupportedGames = new()
+        private readonly Dictionary<string, ModEntryData[]> SupportedGames = new()
         {
-            { "gamecamera", new string[] { "ROTTR.exe" } },
+            { "game_camera", new ModEntryData[]
+            {
+                new ModEntryData("ROTTR.exe", "LaunchFoundationGameCamera.Mod.GameCamera_ROTTR_D3D11.dll") 
+            } },
 
-            { "fov", new string[] { "ROTTR.exe", "SOTTR.exe" } },
+            { "fov_low", new ModEntryData[] 
+            {
+                new ModEntryData("ROTTR.exe", "LaunchFoundationGameCamera.Mod.FoV_ROTTR_Low.dll"),
+                new ModEntryData("SOTTR.exe", "LaunchFoundationGameCamera.Mod.FoV_SOTTR_Low.dll")
+            } },
 
-            { "expandedphotomode", new string[] { "SOTTR.exe" } },
+            { "fov_medium", new ModEntryData[]
+            {
+                new ModEntryData("ROTTR.exe", "LaunchFoundationGameCamera.Mod.FoV_ROTTR_Medium.dll"),
+                new ModEntryData("SOTTR.exe", "LaunchFoundationGameCamera.Mod.FoV_SOTTR_Medium.dll")
+            } },
+
+            { "fov_high", new ModEntryData[]
+            {
+                new ModEntryData("ROTTR.exe", "LaunchFoundationGameCamera.Mod.FoV_ROTTR_High.dll"),
+                new ModEntryData("SOTTR.exe", "LaunchFoundationGameCamera.Mod.FoV_SOTTR_High.dll")
+            } },
+
+            { "expanded_photo_mode", new ModEntryData[]
+            {
+                new ModEntryData("SOTTR.exe", "LaunchFoundationGameCamera.Mod.ExpandedPhotoMode.dll")
+            } },
         };
 
         /// <summary>
         /// 
         /// </summary>
         /// <returns>ID of the game process</returns>
-        private int FindGameProcess(string[] processes)
+        private bool FindGameProcess(ModEntryData[] data, out ModEntryData foundGame, out int processId)
         {
             // Try to find the game process id.
 
-            foreach (var process in processes)
+            foreach (var gameData in data)
             {
-                var processId = DllInjector.GetProcessId(process);
+                var id = DllInjector.GetProcessId(gameData.GameExecutable);
 
-                if (processId != 0)
-                    return processId;
+                if (id != 0)
+                {
+                    foundGame = gameData;
+                    processId = id;
+
+                    return true;
+                }
             }
 
-            return 0;
+            foundGame = new("Unknown", "Unknown");
+            processId = 0;
+
+            return false;
+        }
+
+        private bool LoadMod(ModEntryData[] games)
+        {
+            if (FindGameProcess(games, out var foundGame, out var processId))
+            {
+                if (!ResourceUnpacker.Unpack(foundGame.ModFileResource, CommonResourcePath))
+                {
+                    Logger.LogLine("Cannot unpack the resource");
+                    return false;
+                }
+
+                if (DllInjector.Inject(processId, CommonResourcePath))
+                {
+                    Logger.LogLine("Finished successfully");
+                    return true;
+                }
+            }
+            else
+            {
+                Logger.LogLine("No supported game is running");
+            }
+
+            return false;
         }
 
         public bool StartGameCamera()
         {
             Logger.LogLine("Starting Game Camera");
 
-            if (SupportedGames.TryGetValue("gamecamera", out var games))
+            if (SupportedGames.TryGetValue("game_camera", out var games))
             {
-                int processId = FindGameProcess(games);
-
-                if (processId != 0)
-                {
-                    if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.Mod.GameCamera_ROTTR_D3D11.dll", CommonResourcePath))
-                    {
-                        Logger.LogLine("Cannot unpack the resource");
-                        return false;
-                    }
-
-                    if (DllInjector.Inject(processId, CommonResourcePath))
-                    {
-                        Logger.LogLine("Finished successfully");
-                        return true;
-                    }
-                }
-                else
-                {
-                    Logger.LogLine("No supported game is running");
-                }
+                return LoadMod(games);
             }
 
             return false;
         }
 
-        public bool StartFoV()
+        public bool StartFoVMediumPreset()
         {
-            Logger.LogLine("Starting FoV Mod");
+            Logger.LogLine("Starting FoV Mod - Preset Medium");
 
-            if (SupportedGames.TryGetValue("fov", out var games))
+            if (SupportedGames.TryGetValue("fov_medium", out var games))
             {
-                int processId = FindGameProcess(games);
+                return LoadMod(games);
+            }
 
-                if (processId != 0)
-                {
-                    if (Process.GetProcessById(processId).MainModule?.ModuleName == "ROTTR.exe")
-                    {
-                        if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.Mod.FoV_ROTTR.dll", CommonResourcePath))
-                        {
-                            Logger.LogLine("Cannot unpack the resource");
-                            return false;
-                        }
-                    }
-                    else if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.Mod.FoV_SOTTR.dll", CommonResourcePath))
-                    {
-                        Logger.LogLine("Cannot unpack the resource");
-                        return false;
-                    }
+            return false;
+        }
 
+        public bool StartFoVLowPreset()
+        {
+            Logger.LogLine("Starting FoV Mod - Preset Low");
 
-                    if (DllInjector.Inject(processId, CommonResourcePath))
-                    {
-                        Logger.LogLine("Finished successfully");
-                        return true;
-                    }
-                }
-                else
-                {
-                    Logger.LogLine("No supported game is running");
-                }
+            if (SupportedGames.TryGetValue("fov_low", out var games))
+            {
+                return LoadMod(games);
+            }
+
+            return false;
+        }
+
+        public bool StartFoVHighPreset()
+        {
+            Logger.LogLine("Starting FoV Mod - Preset High");
+
+            if (SupportedGames.TryGetValue("fov_high", out var games))
+            {
+                return LoadMod(games);
             }
 
             return false;
@@ -109,28 +152,9 @@ namespace LaunchFoundationGameCamera.Components
         {
             Logger.LogLine("Starting Expanded Photo Mode");
 
-            if (SupportedGames.TryGetValue("expandedphotomode", out var games))
+            if (SupportedGames.TryGetValue("expanded_photo_mode", out var games))
             {
-                int processId = FindGameProcess(games);
-
-                if (processId != 0)
-                {
-                    if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.Mod.ExpandedPhotoMode.dll", CommonResourcePath))
-                    {
-                        Logger.LogLine("Cannot unpack the resource");
-                        return false;
-                    }
-
-                    if (DllInjector.Inject(processId, CommonResourcePath))
-                    {
-                        Logger.LogLine("Finished successfully");
-                        return true;
-                    }
-                }
-                else
-                {
-                    Logger.LogLine("No supported game is running");
-                }
+                return LoadMod(games);
             }
 
             return false;
