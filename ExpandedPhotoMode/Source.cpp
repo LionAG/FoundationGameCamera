@@ -61,10 +61,10 @@ DWORD __stdcall MainThread(HMODULE thisModule)
         if (iPhotoMode->IsPhotoMode())
         {
             if (GetAsyncKeyState(0x52)) // R
-                iPhotoMode->ChangeRoll(0.1f);
+                iPhotoMode->ChangeRoll(0.01f);
 
             if (GetAsyncKeyState(0x54)) // T
-                iPhotoMode->ChangeRoll(-0.1f);
+                iPhotoMode->ChangeRoll(-0.01f);
 
             if (GetAsyncKeyState(0x46)) // F
                 iPhotoMode->ChangeFoV(0.01f);
