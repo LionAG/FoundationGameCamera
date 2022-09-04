@@ -102,10 +102,10 @@ void Nesae::ExpandedPhotoMode::IPhotoMode::ChangeFoV(float amount)
 
     fov += amount;
 
-    if (fov > 1.3f)
-        fov = 1.3f;
+    if (fov > 1.308f)
+        fov = 1.308f;
 
-    if (fov < 0.1f)
+    if (fov < 0.05f)
         fov = 0.1f;
 
     this->GetInstance()->FoV = fov;
