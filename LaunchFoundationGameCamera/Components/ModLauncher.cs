@@ -44,7 +44,7 @@ namespace LaunchFoundationGameCamera.Components
 
                 if (processId != 0)
                 {
-                    if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.GameCamera_ROTTR_D3D11.dll", CommonResourcePath))
+                    if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.Mod.GameCamera_ROTTR_D3D11.dll", CommonResourcePath))
                     {
                         Logger.LogLine("Cannot unpack the resource");
                         return false;
@@ -77,13 +77,13 @@ namespace LaunchFoundationGameCamera.Components
                 {
                     if (Process.GetProcessById(processId).MainModule?.ModuleName == "ROTTR.exe")
                     {
-                        if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.FoV_ROTTR.dll", CommonResourcePath))
+                        if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.Mod.FoV_ROTTR.dll", CommonResourcePath))
                         {
                             Logger.LogLine("Cannot unpack the resource");
                             return false;
                         }
                     }
-                    else if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.FoV_SOTTR.dll", CommonResourcePath))
+                    else if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.Mod.FoV_SOTTR.dll", CommonResourcePath))
                     {
                         Logger.LogLine("Cannot unpack the resource");
                         return false;
@@ -115,7 +115,7 @@ namespace LaunchFoundationGameCamera.Components
 
                 if (processId != 0)
                 {
-                    if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.ExpandedPhotoMode.dll", CommonResourcePath))
+                    if (!ResourceUnpacker.Unpack("LaunchFoundationGameCamera.Mod.ExpandedPhotoMode.dll", CommonResourcePath))
                     {
                         Logger.LogLine("Cannot unpack the resource");
                         return false;
