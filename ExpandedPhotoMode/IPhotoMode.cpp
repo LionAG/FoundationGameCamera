@@ -118,8 +118,6 @@ void Nesae::ExpandedPhotoMode::IPhotoMode::SavePosition(int index)
     this->SavedPosition[index].x = instance->X;
     this->SavedPosition[index].y = instance->Y;
     this->SavedPosition[index].z = instance->Z;
-
-    Beep(500, 100);
 }
 
 void Nesae::ExpandedPhotoMode::IPhotoMode::RestorePosition(int index)

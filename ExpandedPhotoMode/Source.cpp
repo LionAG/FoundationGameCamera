@@ -75,10 +75,16 @@ DWORD __stdcall MainThread(HMODULE thisModule)
             for (auto& [key, value] : camera_teleport_keys)
             {
                 if (GetAsyncKeyState(value.KeySave))
+                {
                     iPhotoMode->SavePosition(key);
+                    Beep(500, 100);
+                }
 
                 if (GetAsyncKeyState(value.KeyRestore))
+                {
                     iPhotoMode->RestorePosition(key);
+                    Beep(800, 100);
+                }
             }
         }
 
