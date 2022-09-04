@@ -178,9 +178,9 @@ namespace LaunchFoundationGameCamera
             this.Close();
         }
 
-        private void FoVToolStripMenuItem_Click(object sender, EventArgs e)
+        private void FoVMediumToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (!Launcher.StartFoV())
+            if (!Launcher.StartFoVMediumPreset())
             {
                 MessageBox.Show("Process failed, check the log file for details!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -189,6 +189,22 @@ namespace LaunchFoundationGameCamera
         private void ExpandedPhotoModeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (!Launcher.StartExpandedPhotoMode())
+            {
+                MessageBox.Show("Process failed, check the log file for details!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void FoVLowToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Launcher.StartFoVLowPreset())
+            {
+                MessageBox.Show("Process failed, check the log file for details!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void FoVHighToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!Launcher.StartFoVHighPreset())
             {
                 MessageBox.Show("Process failed, check the log file for details!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
