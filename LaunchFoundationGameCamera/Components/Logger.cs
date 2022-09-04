@@ -8,6 +8,11 @@ namespace LaunchFoundationGameCamera.Components
         private static string assembly_filename => $"{Assembly.GetExecutingAssembly().GetName().Name}";
         private static string filename => assembly_filename == null ? "log.txt" : $"{assembly_filename}_log.txt";
 
+        public static void ClearLogFile()
+        {
+            File.WriteAllText(filename, string.Empty);
+        }
+
         public static void Log(string text)
         {
             var line = $"[{DateTime.Now}] {text}";

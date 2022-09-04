@@ -92,7 +92,8 @@ namespace LaunchFoundationGameCamera
             label_Supportinfo.Font = GetFontFromMemory(FontResource.Lato_Regular, 10.0f);
 
             menuStrip1.Renderer = new TopMenuRenderer();
-
+            
+            Logger.ClearLogFile();
             Logger.LogLine($"{AppInformation.AssemblyName} v{AppInformation.ApplicationVersion} started!");
         }
 
