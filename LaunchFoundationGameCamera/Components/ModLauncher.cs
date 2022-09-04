@@ -1,6 +1,4 @@
-﻿using System.Diagnostics;
-
-namespace LaunchFoundationGameCamera.Components
+﻿namespace LaunchFoundationGameCamera.Components
 {
     internal class ModEntryData
     {
@@ -22,10 +20,10 @@ namespace LaunchFoundationGameCamera.Components
         {
             { "game_camera", new ModEntryData[]
             {
-                new ModEntryData("ROTTR.exe", "LaunchFoundationGameCamera.Mod.GameCamera_ROTTR_D3D11.dll") 
+                new ModEntryData("ROTTR.exe", "LaunchFoundationGameCamera.Mod.GameCamera_ROTTR_D3D11.dll")
             } },
 
-            { "fov_low", new ModEntryData[] 
+            { "fov_low", new ModEntryData[]
             {
                 new ModEntryData("ROTTR.exe", "LaunchFoundationGameCamera.Mod.FoV_ROTTR_Low.dll"),
                 new ModEntryData("SOTTR.exe", "LaunchFoundationGameCamera.Mod.FoV_SOTTR_Low.dll")
