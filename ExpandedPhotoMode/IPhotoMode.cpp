@@ -1,6 +1,6 @@
 #include "IPhotoMode.hpp"
 #include <Windows.h>
-
+#include <iostream>
 void Nesae::ExpandedPhotoMode::IPhotoMode::EnableOverride()
 {
     // Go to any distance
@@ -48,8 +48,8 @@ void Nesae::ExpandedPhotoMode::IPhotoMode::DisableOverride()
 Nesae::ExpandedPhotoMode::IPhotoMode::IPhotoMode()
 {
     EnableOverride();
-
-    for (Vec3 pos : this->SavedPosition)
+    
+    for (auto& pos : this->SavedPosition)
     {
         pos.x = 0;
         pos.y = 0;
