@@ -3,8 +3,6 @@
 #include "sdk.hpp"
 #include "BaseTypes.h"
 
-typedef unsigned __int64 QWORD;
-
 namespace Nesae::ExpandedPhotoMode
 {
 	class IPhotoMode
