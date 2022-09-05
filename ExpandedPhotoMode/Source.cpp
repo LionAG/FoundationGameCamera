@@ -3,6 +3,7 @@
 #include <map>
 
 #include "IPhotoMode.hpp"
+#include "IPlayer.hpp"
 
 // Expanded Photo Mode mod for Shadow of the Tomb Raider (v1.0 build 458.0_64 - Steam)
 
@@ -19,8 +20,12 @@ void InitalizeConsole()
     std::wcout << "Expanded Photo Mode mod for Shadow of the Tomb Raider\n\n";
     std::wcout << "Press R and T to adjust roll\n";
     std::wcout << "Press F and G to adjust fov\n";
+    std::wcout << "Press I and O to rotate the player by X axis\n";
+    std::wcout << "Press K and L to rotate the player by Y axis\n";
+    std::wcout << "Press N and M to rotate the player by Z axis\n";
     std::wcout << "Press F1 - F9 to save the camera position\n";
     std::wcout << "Press 1 - 9 to restore the camera position\n";
+    std::wcout << "\n";
     std::wcout << "Press END to unload while not using the photographer mode.";
 }
 
@@ -36,13 +41,13 @@ DWORD __stdcall MainThread(HMODULE thisModule)
     DisableThreadLibraryCalls(thisModule);
     InitalizeConsole();
     
-    struct CameraTeleportKey
+    struct CameraPosKey
     {
         DWORD KeySave;
         DWORD KeyRestore;
     };
 
-    std::map<unsigned int, CameraTeleportKey> camera_pos_keys
+    std::map<unsigned int, CameraPosKey> camera_pos_keys
     {
         { 0, {VK_F1, 0x31} },
         { 1, {VK_F2, 0x32} },
@@ -56,6 +61,7 @@ DWORD __stdcall MainThread(HMODULE thisModule)
     };
 
     auto iPhotoMode = new Nesae::ExpandedPhotoMode::IPhotoMode;
+    auto iPlayer = new Nesae::ExpandedPhotoMode::IPlayer;
 
     while (true)
     {
@@ -72,6 +78,24 @@ DWORD __stdcall MainThread(HMODULE thisModule)
 
             if (GetAsyncKeyState(0x47)) // G
                 iPhotoMode->ChangeFoV(-0.01f);
+
+            if (GetAsyncKeyState(0x49)) // I
+                iPlayer->RotateByXAxis(0.01f);
+
+            if (GetAsyncKeyState(0x4F)) // O
+                iPlayer->RotateByXAxis(-0.01f);
+
+            if (GetAsyncKeyState(0x4B)) // K
+                iPlayer->RotateByYAxis(0.01f);
+
+            if (GetAsyncKeyState(0x4C)) // L
+                iPlayer->RotateByYAxis(-0.01f);
+
+            if (GetAsyncKeyState(0x4E)) // N
+                iPlayer->RotateByZAxis(0.01f);
+
+            if (GetAsyncKeyState(0x4D)) // M
+                iPlayer->RotateByZAxis(-0.01f);
 
             for (auto& [key, value] : camera_pos_keys)
             {
@@ -96,6 +120,7 @@ DWORD __stdcall MainThread(HMODULE thisModule)
     }
 
     delete iPhotoMode;
+    delete iPlayer;
 
     RemoveConsole();
     FreeLibraryAndExitThread(thisModule, 0);

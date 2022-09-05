@@ -15,11 +15,11 @@ void Nesae::ExpandedPhotoMode::IPlayer::RotateByXAxis(float amount)
 
     xRotation += amount;
 
-    if (xRotation > 1.0f)
-        xRotation = 1.0f;
+    if (xRotation > 0.9f)
+        xRotation = 0.9f;
 
-    if (xRotation < -1.0f)
-        xRotation = -1.0f;
+    if (xRotation < -0.9f)
+        xRotation = -0.9f;
 
     this->GetInstance()->XRotation = xRotation;
 }
@@ -30,11 +30,11 @@ void Nesae::ExpandedPhotoMode::IPlayer::RotateByYAxis(float amount)
 
     yRotation += amount;
 
-    if (yRotation > 1.0f)
-        yRotation = 1.0f;
+    if (yRotation > 0.9f)
+        yRotation = 0.9f;
 
-    if (yRotation < -1.0f)
-        yRotation = -1.0f;
+    if (yRotation < -0.9f)
+        yRotation = -0.9f;
 
     this->GetInstance()->YRotation = yRotation;
 }
@@ -45,11 +45,11 @@ void Nesae::ExpandedPhotoMode::IPlayer::RotateByZAxis(float amount)
 
     zRotation += amount;
 
-    if (zRotation > 1.0f)
-        zRotation = 1.0f;
+    if (zRotation > 3.14f)
+        zRotation = 3.14f;
 
-    if (zRotation < -1.0f)
-        zRotation = -1.0f;
+    if (zRotation < -3.14f)
+        zRotation = -3.14f;
 
     this->GetInstance()->ZRotation = zRotation;
 }
