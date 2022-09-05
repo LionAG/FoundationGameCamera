@@ -4,9 +4,8 @@ namespace Nesae::ExpandedPhotoMode
 {
 	// Created with ReClass.NET by KN4CK3R
 
-	class PhotoModeCameraController
+	struct PhotoModeCameraController
 	{
-	public:
 		char pad_0000[592]; //0x0000
 		char CameraType; //0x0250
 		char pad_0251[95]; //0x0251
@@ -18,4 +17,12 @@ namespace Nesae::ExpandedPhotoMode
 		char pad_03D4[24]; //0x03D4
 		float FoV; //0x03EC
 	}; //Size: 0x03F0
+
+	struct Player
+	{
+		char pad_0000[30];
+		float XRotation;
+		float YRotation;
+		float ZRotation;
+	};
 }
