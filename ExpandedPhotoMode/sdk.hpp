@@ -20,7 +20,7 @@ namespace Nesae::ExpandedPhotoMode::SDK
 
 	struct Player
 	{
-		char pad_0000[30];
+		char pad_0000[48];
 		float XRotation;
 		float YRotation;
 		float ZRotation;
