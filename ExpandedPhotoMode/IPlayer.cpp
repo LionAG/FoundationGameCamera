@@ -20,6 +20,13 @@ void Nesae::ExpandedPhotoMode::IPlayer::Rotate(RotationAxis axis, float amount)
     }
 }
 
+void Nesae::ExpandedPhotoMode::IPlayer::Restore()
+{
+    this->GetInstance()->XRotation = 0.0f;
+    this->GetInstance()->YRotation = 0.0f;
+    this->GetInstance()->ZRotation = 0.0f;
+}
+
 void Nesae::ExpandedPhotoMode::IPlayer::RotateByXAxis(float amount)
 {
     auto xRotation = this->GetInstance()->XRotation;

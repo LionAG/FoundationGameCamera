@@ -21,5 +21,6 @@ namespace Nesae::ExpandedPhotoMode
 	public:
 		SDK::Player* GetInstance();
 		void Rotate(RotationAxis axis, float amount);
+		void Restore();
 	};
 }

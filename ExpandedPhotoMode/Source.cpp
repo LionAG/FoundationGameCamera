@@ -97,6 +97,13 @@ DWORD __stdcall MainThread(HMODULE thisModule)
             if (GetAsyncKeyState(0x4D)) // M
                 iPlayer->Rotate(Nesae::ExpandedPhotoMode::RotationAxis::Z, -0.01f);
 
+            if (GetAsyncKeyState(0x51)) // Q
+            {
+                // Game defined reset key
+
+                iPlayer->Restore();
+            }
+
             for (auto& [key, value] : camera_pos_keys)
             {
                 if (GetAsyncKeyState(value.KeySave))
