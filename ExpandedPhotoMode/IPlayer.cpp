@@ -38,3 +38,18 @@ void Nesae::ExpandedPhotoMode::IPlayer::RotateByYAxis(float amount)
 
     this->GetInstance()->YRotation = yRotation;
 }
+
+void Nesae::ExpandedPhotoMode::IPlayer::RotateByZAxis(float amount)
+{
+    auto zRotation = this->GetInstance()->ZRotation;
+
+    zRotation += amount;
+
+    if (zRotation > 1.0f)
+        zRotation = 1.0f;
+
+    if (zRotation < -1.0f)
+        zRotation = -1.0f;
+
+    this->GetInstance()->ZRotation = zRotation;
+}

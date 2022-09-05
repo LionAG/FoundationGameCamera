@@ -12,5 +12,6 @@ namespace Nesae::ExpandedPhotoMode
 
 		void RotateByXAxis(float amount);
 		void RotateByYAxis(float amount);
+		void RotateByZAxis(float amount);
 	};
 }
