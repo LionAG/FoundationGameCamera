@@ -1,6 +1,16 @@
 #include "IPlayer.hpp"
 #include <Windows.h>
 
+Nesae::ExpandedPhotoMode::IPlayer::IPlayer()
+{
+    memcpy(&this->OriginalPlayer, this->GetInstance(), sizeof(SDK::Player));
+}
+
+Nesae::ExpandedPhotoMode::IPlayer::~IPlayer()
+{
+    Restore();
+}
+
 Nesae::ExpandedPhotoMode::SDK::Player* Nesae::ExpandedPhotoMode::IPlayer::GetInstance()
 {
     auto moduleBase = (QWORD)GetModuleHandle(NULL);
@@ -22,9 +32,9 @@ void Nesae::ExpandedPhotoMode::IPlayer::Rotate(RotationAxis axis, float amount)
 
 void Nesae::ExpandedPhotoMode::IPlayer::Restore()
 {
-    this->GetInstance()->XRotation = 0.0f;
-    this->GetInstance()->YRotation = 0.0f;
-    this->GetInstance()->ZRotation = 0.0f;
+    this->GetInstance()->XRotation = this->OriginalPlayer.XRotation;
+    this->GetInstance()->YRotation = this->OriginalPlayer.YRotation;
+    this->GetInstance()->ZRotation = this->OriginalPlayer.ZRotation;
 }
 
 void Nesae::ExpandedPhotoMode::IPlayer::RotateByXAxis(float amount)

@@ -18,7 +18,12 @@ namespace Nesae::ExpandedPhotoMode
 		void RotateByYAxis(float amount);
 		void RotateByZAxis(float amount);
 
+		SDK::Player OriginalPlayer;
+
 	public:
+		IPlayer();
+		~IPlayer();
+
 		SDK::Player* GetInstance();
 		void Rotate(RotationAxis axis, float amount);
 		void Restore();
