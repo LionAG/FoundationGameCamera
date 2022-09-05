@@ -49,7 +49,7 @@ Nesae::ExpandedPhotoMode::IPhotoMode::IPhotoMode()
 {
     EnableOverride();
     
-    auto instance = this->GetInstance();
+    auto instance = this->GetCameraInstance();
 
     for (auto& pos : this->SavedPosition)
     {
@@ -72,7 +72,7 @@ bool Nesae::ExpandedPhotoMode::IPhotoMode::IsPhotoMode()
     return (flag == false ? false : true);
 }
 
-Nesae::ExpandedPhotoMode::SDK::PhotoModeCameraController* Nesae::ExpandedPhotoMode::IPhotoMode::GetInstance()
+Nesae::ExpandedPhotoMode::SDK::PhotoModeCameraController* Nesae::ExpandedPhotoMode::IPhotoMode::GetCameraInstance()
 {
     auto moduleBase = (QWORD)GetModuleHandle(NULL);
     auto pointerBase = *((QWORD*)(moduleBase + 0x36A76C0));
@@ -83,7 +83,7 @@ Nesae::ExpandedPhotoMode::SDK::PhotoModeCameraController* Nesae::ExpandedPhotoMo
 
 void Nesae::ExpandedPhotoMode::IPhotoMode::ChangeRoll(float amount)
 {
-    auto roll = this->GetInstance()->Roll;
+    auto roll = this->GetCameraInstance()->Roll;
     
     roll += amount;
 
@@ -95,12 +95,12 @@ void Nesae::ExpandedPhotoMode::IPhotoMode::ChangeRoll(float amount)
     if (roll < -3.14f)
         roll = 3.14f;
 
-    this->GetInstance()->Roll = roll;
+    this->GetCameraInstance()->Roll = roll;
 }
 
 void Nesae::ExpandedPhotoMode::IPhotoMode::ChangeFoV(float amount)
 {
-    auto fov = this->GetInstance()->FoV;
+    auto fov = this->GetCameraInstance()->FoV;
 
     fov += amount;
 
@@ -110,12 +110,12 @@ void Nesae::ExpandedPhotoMode::IPhotoMode::ChangeFoV(float amount)
     if (fov < 0.05f)
         fov = 0.1f;
 
-    this->GetInstance()->FoV = fov;
+    this->GetCameraInstance()->FoV = fov;
 }
 
 void Nesae::ExpandedPhotoMode::IPhotoMode::SavePosition(int index)
 {
-    auto instance = this->GetInstance();
+    auto instance = this->GetCameraInstance();
 
     this->SavedPosition[index].x = instance->X;
     this->SavedPosition[index].y = instance->Y;
@@ -124,7 +124,7 @@ void Nesae::ExpandedPhotoMode::IPhotoMode::SavePosition(int index)
 
 void Nesae::ExpandedPhotoMode::IPhotoMode::RestorePosition(int index)
 {
-    auto instance = this->GetInstance();
+    auto instance = this->GetCameraInstance();
 
     instance->X = this->SavedPosition[index].x;
     instance->Y = this->SavedPosition[index].y;
