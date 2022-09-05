@@ -49,11 +49,13 @@ Nesae::ExpandedPhotoMode::IPhotoMode::IPhotoMode()
 {
     EnableOverride();
     
+    auto instance = this->GetInstance();
+
     for (auto& pos : this->SavedPosition)
     {
-        pos.x = 0;
-        pos.y = 0;
-        pos.z = 0;
+        pos.x = instance->X;
+        pos.y = instance->Y;
+        pos.z = instance->Z;
     }
 }
 
