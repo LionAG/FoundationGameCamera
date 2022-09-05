@@ -134,11 +134,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="IPhotoMode.cpp" />
+    <ClCompile Include="IPlayer.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseTypes.h" />
     <ClInclude Include="IPhotoMode.hpp" />
+    <ClInclude Include="IPlayer.hpp" />
     <ClInclude Include="sdk.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
