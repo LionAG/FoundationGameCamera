@@ -80,22 +80,22 @@ DWORD __stdcall MainThread(HMODULE thisModule)
                 iPhotoMode->ChangeFoV(-0.01f);
 
             if (GetAsyncKeyState(0x49)) // I
-                iPlayer->RotateByXAxis(0.01f);
+                iPlayer->Rotate(Nesae::ExpandedPhotoMode::RotationAxis::X, 0.01f);
 
             if (GetAsyncKeyState(0x4F)) // O
-                iPlayer->RotateByXAxis(-0.01f);
+                iPlayer->Rotate(Nesae::ExpandedPhotoMode::RotationAxis::X, -0.01f);
 
             if (GetAsyncKeyState(0x4B)) // K
-                iPlayer->RotateByYAxis(0.01f);
+                iPlayer->Rotate(Nesae::ExpandedPhotoMode::RotationAxis::Y, 0.01f);
 
             if (GetAsyncKeyState(0x4C)) // L
-                iPlayer->RotateByYAxis(-0.01f);
+                iPlayer->Rotate(Nesae::ExpandedPhotoMode::RotationAxis::Y, -0.01f);
 
             if (GetAsyncKeyState(0x4E)) // N
-                iPlayer->RotateByZAxis(0.01f);
+                iPlayer->Rotate(Nesae::ExpandedPhotoMode::RotationAxis::Z, 0.01f);
 
             if (GetAsyncKeyState(0x4D)) // M
-                iPlayer->RotateByZAxis(-0.01f);
+                iPlayer->Rotate(Nesae::ExpandedPhotoMode::RotationAxis::Z, -0.01f);
 
             for (auto& [key, value] : camera_pos_keys)
             {

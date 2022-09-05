@@ -5,13 +5,21 @@
 
 namespace Nesae::ExpandedPhotoMode
 {
+	enum class RotationAxis
+	{
+		X,
+		Y,
+		Z
+	};
+
 	class IPlayer
 	{
-	public:
-		SDK::Player* GetInstance();
-
 		void RotateByXAxis(float amount);
 		void RotateByYAxis(float amount);
 		void RotateByZAxis(float amount);
+
+	public:
+		SDK::Player* GetInstance();
+		void Rotate(RotationAxis axis, float amount);
 	};
 }
