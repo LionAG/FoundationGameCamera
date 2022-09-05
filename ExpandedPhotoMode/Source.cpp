@@ -33,6 +33,7 @@ void RemoveConsole()
 
 DWORD __stdcall MainThread(HMODULE thisModule)
 {
+    DisableThreadLibraryCalls(thisModule);
     InitalizeConsole();
     
     struct CameraTeleportKey
