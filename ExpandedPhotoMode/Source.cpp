@@ -41,7 +41,7 @@ DWORD __stdcall MainThread(HMODULE thisModule)
         DWORD KeyRestore;
     };
 
-    std::map<unsigned int, CameraTeleportKey> camera_teleport_keys
+    std::map<unsigned int, CameraTeleportKey> camera_pos_keys
     {
         { 0, {VK_F1, 0x31} },
         { 1, {VK_F2, 0x32} },
@@ -72,7 +72,7 @@ DWORD __stdcall MainThread(HMODULE thisModule)
             if (GetAsyncKeyState(0x47)) // G
                 iPhotoMode->ChangeFoV(-0.01f);
 
-            for (auto& [key, value] : camera_teleport_keys)
+            for (auto& [key, value] : camera_pos_keys)
             {
                 if (GetAsyncKeyState(value.KeySave))
                 {
