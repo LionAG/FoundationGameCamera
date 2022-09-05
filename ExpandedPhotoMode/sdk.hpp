@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Nesae::ExpandedPhotoMode
+namespace Nesae::ExpandedPhotoMode::SDK
 {
 	// Created with ReClass.NET by KN4CK3R
 

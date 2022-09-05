@@ -70,13 +70,13 @@ bool Nesae::ExpandedPhotoMode::IPhotoMode::IsPhotoMode()
     return (flag == false ? false : true);
 }
 
-Nesae::ExpandedPhotoMode::PhotoModeCameraController* Nesae::ExpandedPhotoMode::IPhotoMode::GetInstance()
+Nesae::ExpandedPhotoMode::SDK::PhotoModeCameraController* Nesae::ExpandedPhotoMode::IPhotoMode::GetInstance()
 {
     auto moduleBase = (QWORD)GetModuleHandle(NULL);
     auto pointerBase = *((QWORD*)(moduleBase + 0x36A76C0));
     auto instance = *((QWORD*)(pointerBase + 0x48));
 
-    return reinterpret_cast<PhotoModeCameraController*>(instance);
+    return reinterpret_cast<SDK::PhotoModeCameraController*>(instance);
 }
 
 void Nesae::ExpandedPhotoMode::IPhotoMode::ChangeRoll(float amount)

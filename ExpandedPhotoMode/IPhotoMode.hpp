@@ -19,7 +19,7 @@ namespace Nesae::ExpandedPhotoMode
 		~IPhotoMode();
 
 		bool IsPhotoMode();
-		PhotoModeCameraController* GetInstance();
+		SDK::PhotoModeCameraController* GetInstance();
 
 		void ChangeRoll(float amount);
 		void ChangeFoV(float amount);
