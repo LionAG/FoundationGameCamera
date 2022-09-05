@@ -1,6 +1,6 @@
 #include "IPhotoMode.hpp"
 #include <Windows.h>
-#include <iostream>
+
 void Nesae::ExpandedPhotoMode::IPhotoMode::EnableOverride()
 {
     // Go to any distance
