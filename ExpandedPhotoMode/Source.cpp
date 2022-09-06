@@ -119,17 +119,17 @@ DWORD __stdcall MainThread(HMODULE thisModule)
                 iPlayer->Restore();
             }
 
-            for (auto& [key, value] : camera_pos_keys)
+            for (const auto& [index, object] : camera_pos_keys)
             {
-                if (GetAsyncKeyState(value.KeySave))
+                if (GetAsyncKeyState(object.KeySave))
                 {
-                    iPhotoMode->SavePosition(key);
+                    iPhotoMode->SavePosition(index);
                     Beep(500, 100);
                 }
 
-                if (GetAsyncKeyState(value.KeyRestore))
+                if (GetAsyncKeyState(object.KeyRestore))
                 {
-                    iPhotoMode->RestorePosition(key);
+                    iPhotoMode->RestorePosition(index);
                     Beep(800, 100);
                 }
             }
