@@ -66,10 +66,7 @@ Nesae::ExpandedPhotoMode::IPhotoMode::~IPhotoMode()
 
 bool Nesae::ExpandedPhotoMode::IPhotoMode::IsPhotoMode()
 {
-    auto moduleBase = (QWORD)GetModuleHandle(NULL);
-    auto flag = *((bool*)(moduleBase + 0x23CB290));
-
-    return (flag == false ? false : true);
+    return (this->GetCameraInstance() != NULL);
 }
 
 Nesae::ExpandedPhotoMode::SDK::PhotoModeCameraController* Nesae::ExpandedPhotoMode::IPhotoMode::GetCameraInstance()
