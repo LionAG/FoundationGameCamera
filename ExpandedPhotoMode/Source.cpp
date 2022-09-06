@@ -65,7 +65,22 @@ DWORD __stdcall MainThread(HMODULE thisModule)
 
     while (true)
     {
-        if (iPhotoMode->IsPhotoMode())
+#pragma region ECM Initialization
+
+        if (!iPhotoMode->ECMInitialized && iPhotoMode->IsPhotoMode())
+        {
+            iPhotoMode->InitializeECM();
+        }
+        else if (iPhotoMode->ECMInitialized && !iPhotoMode->IsPhotoMode())
+        {
+            iPhotoMode->UninitializeECM();
+        }
+
+#pragma endregion
+
+#pragma region Hot Keys
+
+        if (iPhotoMode->ECMInitialized && iPhotoMode->IsPhotoMode())
         {
             if (GetAsyncKeyState(0x52)) // R
                 iPhotoMode->ChangeRoll(0.01f);
@@ -122,6 +137,8 @@ DWORD __stdcall MainThread(HMODULE thisModule)
 
         if (GetAsyncKeyState(VK_END))
             break;
+
+#pragma endregion
 
         Sleep(10);
     }

@@ -7,10 +7,13 @@ namespace Nesae::ExpandedPhotoMode
 {
 	class IPhotoMode
 	{
+		bool overrideEnabled = false;
+		bool ecmInitialized = false;
+
 		void EnableOverride();
 		void DisableOverride();
 		
-		Vec3 SavedPosition[9];
+		Vec3 SavedPosition[9] = {};
 
 	public:
 		IPhotoMode();
@@ -24,5 +27,11 @@ namespace Nesae::ExpandedPhotoMode
 
 		void SavePosition(int index);
 		void RestorePosition(int index);
+
+		void InitializeECM();
+		void UninitializeECM();
+		bool IsECMInitialized();
+
+		__declspec(property(get = IsECMInitialized)) bool ECMInitialized;
 	};
 }

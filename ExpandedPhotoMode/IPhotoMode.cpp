@@ -23,6 +23,8 @@ void Nesae::ExpandedPhotoMode::IPhotoMode::EnableOverride()
     VirtualProtect((LPVOID)coordinateX, 0x1000, oldProtect, &sOldProtect);
 
     delete[] data;
+
+    overrideEnabled = true;
 }
 
 void Nesae::ExpandedPhotoMode::IPhotoMode::DisableOverride()
@@ -43,30 +45,33 @@ void Nesae::ExpandedPhotoMode::IPhotoMode::DisableOverride()
     memcpy((void*)coordinateZ, dataZ, sizeof(dataZ));
 
     VirtualProtect((LPVOID)coordinateX, 0x1000, oldProtect, &sOldProtect);
+
+    overrideEnabled = false;
 }
 
 Nesae::ExpandedPhotoMode::IPhotoMode::IPhotoMode()
 {
-    EnableOverride();
-    
-    auto instance = this->GetCameraInstance();
+    // Initialize to default (0,0,0) position
 
     for (auto& pos : this->SavedPosition)
     {
-        pos.x = instance->X;
-        pos.y = instance->Y;
-        pos.z = instance->Z;
+        pos.x = 0;
+        pos.y = 0;
+        pos.z = 0;
     }
 }
 
 Nesae::ExpandedPhotoMode::IPhotoMode::~IPhotoMode()
 {
-    DisableOverride();
+    if(this->overrideEnabled)
+        DisableOverride();
 }
 
 bool Nesae::ExpandedPhotoMode::IPhotoMode::IsPhotoMode()
 {
-    return (this->GetCameraInstance() != NULL);
+    // Check if photographer mode is enabled by checking if the address of PhotoModeCameraController instance != nullptr
+
+    return (GetCameraInstance() != nullptr);
 }
 
 Nesae::ExpandedPhotoMode::SDK::PhotoModeCameraController* Nesae::ExpandedPhotoMode::IPhotoMode::GetCameraInstance()
@@ -126,4 +131,39 @@ void Nesae::ExpandedPhotoMode::IPhotoMode::RestorePosition(int index)
     instance->X = this->SavedPosition[index].x;
     instance->Y = this->SavedPosition[index].y;
     instance->Z = this->SavedPosition[index].z;
+}
+
+void Nesae::ExpandedPhotoMode::IPhotoMode::InitializeECM()
+{
+    EnableOverride();
+
+    auto instance = this->GetCameraInstance();
+
+    for (auto& pos : this->SavedPosition)
+    {
+        pos.x = instance->X;
+        pos.y = instance->Y;
+        pos.z = instance->Z;
+    }
+
+    ecmInitialized = true;
+}
+
+void Nesae::ExpandedPhotoMode::IPhotoMode::UninitializeECM()
+{
+    DisableOverride();
+
+    for (auto& pos : this->SavedPosition)
+    {
+        pos.x = 0;
+        pos.y = 0;
+        pos.z = 0;
+    }
+
+    ecmInitialized = false;
+}
+
+bool Nesae::ExpandedPhotoMode::IPhotoMode::IsECMInitialized()
+{
+    return this->ecmInitialized;
 }
