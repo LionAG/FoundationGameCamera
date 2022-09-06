@@ -7,9 +7,9 @@ v0.6.4
 	ECM: Added the ability to rotate player by X, Y and Z axis
 
 v0.6.3 
-    Add FoV preset selection
-    Reduced roll intensity in the Expanded Photo Mode
-    Small fixes & code cleanup
+	Add FoV preset selection
+	Reduced roll intensity in the Expanded Photo Mode
+	Small fixes & code cleanup
 
 v0.6.2 
 	Fix resource unpacking
@@ -21,33 +21,33 @@ v0.6.0
 	Launcher redesign, ability to launch other camera mods and fixes
 	
 v0.5.3
-    Fix for incorrect movement state that could result in player remaining frozen
-    Visual UI changes
-    Restoring original camera data
-    Ability to save up to three camera positions
-    Removed manual player freezing
+	Fix for incorrect movement state that could result in player remaining frozen
+	Visual UI changes
+	Restoring original camera data
+	Ability to save up to three camera positions
+	Removed manual player freezing
 
 v0.5.2 
-    Updated key binding
-    Allow manual input by holding CTRL key and clicking on a slider
+	Updated key binding
+	Allow manual input by holding CTRL key and clicking on a slider
 
 v0.5.1
-    Toggle the camera override
-    Code cleanup and small fixes
-    Fixed possible null pointer dereference when enabling the overlay
+	Toggle the camera override
+	Code cleanup and small fixes
+	Fixed possible null pointer dereference when enabling the overlay
 
 v0.5.0 
-    Expanded camera controls
-    Ability to rotate player
-    Updated font and minor changes
-    Basic following camera
-    Freeze the player
-    Seamless update process
-    Use Discord chat for issue reporting
+	Expanded camera controls
+	Ability to rotate player
+	Updated font and minor changes
+	Basic following camera
+	Freeze the player
+	Seamless update process
+	Use Discord chat for issue reporting
 
 v0.4.4 
-    Expanded blur effect override
-    Expanded light effect override
+	Expanded blur effect override
+	Expanded light effect override
 
 v0.4.3 
 	Beta support for disabling the HUD and minor fixes.
@@ -59,9 +59,9 @@ v0.4.1
 	Launcher and the overlay adjustments
 	
 v0.4.0
-    Fixed input hook
-    Cursor is now displayed correctly when the overlay is enabled
-    Smaller fixes and improvements
+	Fixed input hook
+	Cursor is now displayed correctly when the overlay is enabled
+	Smaller fixes and improvements
 
 v0.3.3
 	UI Adjustments
