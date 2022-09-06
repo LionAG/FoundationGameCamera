@@ -1,6 +1,6 @@
 v0.6.5
-    ECM: Disable hotkeys and distance limit override while not in the photo mode
-    ECM: A few improvements
+	ECM: Disable hotkeys and distance limit override while not in the photo mode
+	ECM: A few improvements
 
 v0.6.4 
 	ECM: Initialize camera position to the current one
