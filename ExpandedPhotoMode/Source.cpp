@@ -29,7 +29,7 @@ void InitalizeConsole()
     std::wcout << "Press END to unload while not using the photographer mode.";
 }
 
-void RemoveConsole()
+void UninitializeConsole()
 {
     std::wcout << "\n\nUnloaded";
 
@@ -146,7 +146,7 @@ DWORD __stdcall MainThread(HMODULE thisModule)
     delete iPhotoMode;
     delete iPlayer;
 
-    RemoveConsole();
+    UninitializeConsole();
     FreeLibraryAndExitThread(thisModule, 0);
     
     return 0;
