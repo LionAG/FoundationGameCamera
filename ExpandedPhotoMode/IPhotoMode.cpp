@@ -133,7 +133,7 @@ void Nesae::ExpandedPhotoMode::IPhotoMode::RestorePosition(int index)
     instance->Z = this->SavedPosition[index].z;
 }
 
-void Nesae::ExpandedPhotoMode::IPhotoMode::InitializeECM()
+void Nesae::ExpandedPhotoMode::IPhotoMode::Initialize()
 {
     EnableOverride();
 
@@ -146,10 +146,10 @@ void Nesae::ExpandedPhotoMode::IPhotoMode::InitializeECM()
         pos.z = instance->Z;
     }
 
-    ecmInitialized = true;
+    initialized = true;
 }
 
-void Nesae::ExpandedPhotoMode::IPhotoMode::UninitializeECM()
+void Nesae::ExpandedPhotoMode::IPhotoMode::Uninitialize()
 {
     DisableOverride();
 
@@ -160,10 +160,10 @@ void Nesae::ExpandedPhotoMode::IPhotoMode::UninitializeECM()
         pos.z = 0;
     }
 
-    ecmInitialized = false;
+    initialized = false;
 }
 
-bool Nesae::ExpandedPhotoMode::IPhotoMode::IsECMInitialized()
+bool Nesae::ExpandedPhotoMode::IPhotoMode::IsInitialized()
 {
-    return this->ecmInitialized;
+    return this->initialized;
 }

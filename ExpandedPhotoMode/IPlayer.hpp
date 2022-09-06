@@ -14,6 +14,8 @@ namespace Nesae::ExpandedPhotoMode
 
 	class IPlayer
 	{
+		bool initialized = false;
+
 		void RotateByXAxis(float amount);
 		void RotateByYAxis(float amount);
 		void RotateByZAxis(float amount);
@@ -25,7 +27,15 @@ namespace Nesae::ExpandedPhotoMode
 		~IPlayer();
 
 		SDK::Player* GetInstance();
+
 		void Rotate(RotationAxis axis, float amount);
 		void Restore();
+	
+		void Initialize();
+		void Uninitialize();
+		bool IsInitialized();
+	
+		__declspec(property(get = IsInitialized)) bool Initialized;
+
 	};
 }

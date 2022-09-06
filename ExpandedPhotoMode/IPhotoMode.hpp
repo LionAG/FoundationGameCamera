@@ -8,7 +8,7 @@ namespace Nesae::ExpandedPhotoMode
 	class IPhotoMode
 	{
 		bool overrideEnabled = false;
-		bool ecmInitialized = false;
+		bool initialized = false;
 
 		void EnableOverride();
 		void DisableOverride();
@@ -28,10 +28,10 @@ namespace Nesae::ExpandedPhotoMode
 		void SavePosition(int index);
 		void RestorePosition(int index);
 
-		void InitializeECM();
-		void UninitializeECM();
-		bool IsECMInitialized();
+		void Initialize();
+		void Uninitialize();
+		bool IsInitialized();
 
-		__declspec(property(get = IsECMInitialized)) bool ECMInitialized;
+		__declspec(property(get = IsInitialized)) bool Initialized;
 	};
 }

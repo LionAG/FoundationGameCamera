@@ -3,7 +3,7 @@
 
 Nesae::ExpandedPhotoMode::IPlayer::IPlayer()
 {
-    memcpy(&this->OriginalPlayer, this->GetInstance(), sizeof(SDK::Player));
+    ZeroMemory(&this->OriginalPlayer, sizeof(SDK::Player));
 }
 
 Nesae::ExpandedPhotoMode::IPlayer::~IPlayer()
@@ -35,6 +35,25 @@ void Nesae::ExpandedPhotoMode::IPlayer::Restore()
     this->GetInstance()->XRotation = this->OriginalPlayer.XRotation;
     this->GetInstance()->YRotation = this->OriginalPlayer.YRotation;
     this->GetInstance()->ZRotation = this->OriginalPlayer.ZRotation;
+}
+
+void Nesae::ExpandedPhotoMode::IPlayer::Initialize()
+{
+    memcpy(&this->OriginalPlayer, this->GetInstance(), sizeof(SDK::Player));
+
+    initialized = true;
+}
+
+void Nesae::ExpandedPhotoMode::IPlayer::Uninitialize()
+{
+    ZeroMemory(&this->OriginalPlayer, sizeof(SDK::Player));
+
+    initialized = false;
+}
+
+bool Nesae::ExpandedPhotoMode::IPlayer::IsInitialized()
+{
+    return initialized;
 }
 
 void Nesae::ExpandedPhotoMode::IPlayer::RotateByXAxis(float amount)

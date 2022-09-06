@@ -63,24 +63,32 @@ DWORD __stdcall MainThread(HMODULE thisModule)
     auto iPhotoMode = new Nesae::ExpandedPhotoMode::IPhotoMode;
     auto iPlayer = new Nesae::ExpandedPhotoMode::IPlayer;
 
+    bool initialized = false;
+
     while (true)
     {
-#pragma region ECM Initialization
+#pragma region Initialization
 
-        if (!iPhotoMode->ECMInitialized && iPhotoMode->IsPhotoMode())
+        if (!initialized && iPhotoMode->IsPhotoMode())
         {
-            iPhotoMode->InitializeECM();
+            iPhotoMode->Initialize();
+            iPlayer->Initialize();
+
+            initialized = true;
         }
-        else if (iPhotoMode->ECMInitialized && !iPhotoMode->IsPhotoMode())
+        else if (initialized && !iPhotoMode->IsPhotoMode())
         {
-            iPhotoMode->UninitializeECM();
+            iPhotoMode->Uninitialize();
+            iPlayer->Uninitialize();
+
+            initialized = false;
         }
 
 #pragma endregion
 
 #pragma region Hot Keys
 
-        if (iPhotoMode->ECMInitialized && iPhotoMode->IsPhotoMode())
+        if (initialized && iPhotoMode->IsPhotoMode())
         {
             if (GetAsyncKeyState(0x52)) // R
                 iPhotoMode->ChangeRoll(0.01f);
