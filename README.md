@@ -28,14 +28,12 @@ A camera mod for the Foundation Engine.
 
 ## Known issues
 
-This project is still under development. As such some things may work partially and/or incorrectly.
-
-The display hook is not fully functional - to use it follow the steps:
+The display hook is not fully functional - to use it:
 
 1. Set the desired values using the overlay sliders.
 2. Go to display settings and move the brightness slider in any way.
 
-Note: Using a custom resolution scale still requires using windowed mode.
+Using a custom resolution scale still requires using windowed mode.
 
 #### Acknowledgments
 
