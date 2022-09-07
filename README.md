@@ -30,8 +30,8 @@ A camera mod for the Foundation Engine.
 
 The display hook is not fully functional - to use it:
 
-1. Set the desired values using the overlay sliders.
-2. Go to display settings and move the brightness slider in any way.
+1. Set desired values using the overlay sliders.
+2. Go to display settings and move the brightness slider.
 
 Using a custom resolution scale still requires using windowed mode.
 
