@@ -35,10 +35,10 @@ The display hook is not fully functional - to use it:
 
 Using a custom resolution scale still requires using windowed mode.
 
-#### Acknowledgments
+### Acknowledgments
 
 Working on this project was first inspired by the [OpenGameCamera](https://github.com/coltonon/OpenGameCamera).
 
-#### Notes
+### Notes
 
 ###### Please do not upload the files to other sites. ######
