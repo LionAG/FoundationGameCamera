@@ -133,12 +133,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Globals.cpp" />
     <ClCompile Include="IPhotoMode.cpp" />
     <ClCompile Include="IPlayer.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseTypes.h" />
+    <ClInclude Include="Globals.hpp" />
     <ClInclude Include="IPhotoMode.hpp" />
     <ClInclude Include="IPlayer.hpp" />
     <ClInclude Include="sdk.hpp" />
