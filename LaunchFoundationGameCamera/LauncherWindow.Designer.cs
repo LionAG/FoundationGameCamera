@@ -124,9 +124,9 @@
             this.label_Supportinfo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label_Supportinfo.Location = new System.Drawing.Point(3, 0);
             this.label_Supportinfo.Name = "label_Supportinfo";
-            this.label_Supportinfo.Size = new System.Drawing.Size(531, 43);
+            this.label_Supportinfo.Size = new System.Drawing.Size(501, 43);
             this.label_Supportinfo.TabIndex = 1;
-            this.label_Supportinfo.Text = "For support, troubleshooting and issue reporting join the Discord chat:";
+            this.label_Supportinfo.Text = "For communication and issue reporting join the Discord chat:";
             this.label_Supportinfo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.label_Supportinfo.Click += new System.EventHandler(this.Label_Supportinfo_Click);
             // 
@@ -135,7 +135,7 @@
             this.label_ClickHere.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label_ClickHere.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label_ClickHere.ForeColor = System.Drawing.Color.LightBlue;
-            this.label_ClickHere.Location = new System.Drawing.Point(540, 0);
+            this.label_ClickHere.Location = new System.Drawing.Point(510, 0);
             this.label_ClickHere.Name = "label_ClickHere";
             this.label_ClickHere.Size = new System.Drawing.Size(91, 43);
             this.label_ClickHere.TabIndex = 2;
@@ -256,29 +256,29 @@
             // foVLowToolStripMenuItem
             // 
             this.foVLowToolStripMenuItem.Name = "foVLowToolStripMenuItem";
-            this.foVLowToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.foVLowToolStripMenuItem.Text = "FoV - Low";
+            this.foVLowToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.foVLowToolStripMenuItem.Text = "FoV [Low]";
             this.foVLowToolStripMenuItem.Click += new System.EventHandler(this.FoVLowToolStripMenuItem_Click);
             // 
             // foVToolStripMenuItem
             // 
             this.foVToolStripMenuItem.Name = "foVToolStripMenuItem";
-            this.foVToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.foVToolStripMenuItem.Text = "FoV - Medium";
+            this.foVToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.foVToolStripMenuItem.Text = "FoV [Medium]";
             this.foVToolStripMenuItem.Click += new System.EventHandler(this.FoVMediumToolStripMenuItem_Click);
             // 
             // foVHighToolStripMenuItem
             // 
             this.foVHighToolStripMenuItem.Name = "foVHighToolStripMenuItem";
-            this.foVHighToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.foVHighToolStripMenuItem.Text = "FoV - High";
+            this.foVHighToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.foVHighToolStripMenuItem.Text = "FoV [High]";
             this.foVHighToolStripMenuItem.Click += new System.EventHandler(this.FoVHighToolStripMenuItem_Click);
             // 
             // expandedPhotoModeToolStripMenuItem
             // 
             this.expandedPhotoModeToolStripMenuItem.Name = "expandedPhotoModeToolStripMenuItem";
-            this.expandedPhotoModeToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.expandedPhotoModeToolStripMenuItem.Text = "Expanded Photo Mode";
+            this.expandedPhotoModeToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.expandedPhotoModeToolStripMenuItem.Text = "ECM";
             this.expandedPhotoModeToolStripMenuItem.Click += new System.EventHandler(this.ExpandedPhotoModeToolStripMenuItem_Click);
             // 
             // LauncherWindow
