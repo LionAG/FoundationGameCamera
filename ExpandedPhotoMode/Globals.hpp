@@ -34,6 +34,9 @@ namespace Nesae::ExpandedPhotoMode::Globals
 		static KeyBind Player_ZAxisRotationUp;
 		static KeyBind Player_ZAxisRotationDown;
 
+		static KeyBind Reset;
+		static KeyBind DisableMod;
+
 		static std::map<DWORD, CameraPosKey> Camera_PosManageKeys;
 	};
 }

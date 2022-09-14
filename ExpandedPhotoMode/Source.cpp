@@ -4,8 +4,11 @@
 
 #include "IPhotoMode.hpp"
 #include "IPlayer.hpp"
+#include "Globals.hpp"
 
 // Expanded Photo Mode mod for Shadow of the Tomb Raider (v1.0 build 458.0_64 - Steam)
+
+using Nesae::ExpandedPhotoMode::Globals::KeyBindings;
 
 void InitalizeConsole()
 {
@@ -15,23 +18,23 @@ void InitalizeConsole()
     CONSOLE_CURSOR_INFO info{ 100, FALSE };
     SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), &info);
 
-    SetConsoleTitle(L"FoundationGameCamera");
+    SetConsoleTitle(L"Foundation Game Camera");
 
     std::wcout << "Expanded Photo Mode mod for Shadow of the Tomb Raider\n\n";
-    std::wcout << "Press R and T to adjust roll\n";
-    std::wcout << "Press F and G to adjust fov\n";
-    std::wcout << "Press I and O to rotate the player by X axis\n";
-    std::wcout << "Press K and L to rotate the player by Y axis\n";
-    std::wcout << "Press N and M to rotate the player by Z axis\n";
+    std::wcout << "Press " << KeyBindings::RollAdjustUp.KeyName << " and " << KeyBindings::RollAdjustDown.KeyName << " to adjust roll\n";
+    std::wcout << "Press " << KeyBindings::FoVAdjustUp.KeyName << " and " << KeyBindings::FoVAdjustDown.KeyName << " to adjust fov\n";
+    std::wcout << "Press " << KeyBindings::Player_XAxisRotationUp.KeyName << " and " << KeyBindings::Player_YAxisRotationDown.KeyName << " to rotate the player by X axis\n";
+    std::wcout << "Press " << KeyBindings::Player_YAxisRotationUp.KeyName << " and " << KeyBindings::Player_YAxisRotationDown.KeyName << " to rotate the player by Y axis\n";
+    std::wcout << "Press " << KeyBindings::Player_ZAxisRotationUp.KeyName << " and " << KeyBindings::Player_ZAxisRotationDown.KeyName << " to rotate the player by Z axis\n";
     std::wcout << "Press F1 - F9 to save the camera position\n";
     std::wcout << "Press 1 - 9 to restore the camera position\n";
     std::wcout << "\n";
-    std::wcout << "Press END to unload while not using the photographer mode.";
+    std::wcout << "Press " << KeyBindings::DisableMod.KeyName << " to unload while not using the photographer mode.";
 }
 
 void UninitializeConsole()
 {
-    std::wcout << "\n\nUnloaded";
+    std::wcout << "\n\nMod disabled";
 
     FreeConsole();
 }
@@ -40,25 +43,6 @@ DWORD __stdcall MainThread(HMODULE thisModule)
 {
     DisableThreadLibraryCalls(thisModule);
     InitalizeConsole();
-    
-    struct CameraPosKey
-    {
-        DWORD KeySave;
-        DWORD KeyRestore;
-    };
-
-    std::map<unsigned int, CameraPosKey> camera_pos_keys
-    {
-        { 0, {VK_F1, 0x31} },
-        { 1, {VK_F2, 0x32} },
-        { 2, {VK_F3, 0x33} },
-        { 3, {VK_F4, 0x34} },
-        { 4, {VK_F5, 0x35} },
-        { 5, {VK_F6, 0x36} },
-        { 6, {VK_F7, 0x37} },
-        { 7, {VK_F8, 0x38} },
-        { 8, {VK_F9, 0x39} },
-    };
 
     auto iPhotoMode = new Nesae::ExpandedPhotoMode::IPhotoMode;
     auto iPlayer = new Nesae::ExpandedPhotoMode::IPlayer;
@@ -90,52 +74,52 @@ DWORD __stdcall MainThread(HMODULE thisModule)
 
         if (initialized && iPhotoMode->IsPhotoMode())
         {
-            if (GetAsyncKeyState(0x52)) // R
+            if (GetAsyncKeyState(KeyBindings::RollAdjustUp.KeyCode))
                 iPhotoMode->ChangeRoll(0.01f);
 
-            if (GetAsyncKeyState(0x54)) // T
+            if (GetAsyncKeyState(KeyBindings::RollAdjustDown.KeyCode))
                 iPhotoMode->ChangeRoll(-0.01f);
 
-            if (GetAsyncKeyState(0x46)) // F
+            if (GetAsyncKeyState(KeyBindings::FoVAdjustUp.KeyCode))
                 iPhotoMode->ChangeFoV(0.01f);
 
-            if (GetAsyncKeyState(0x47)) // G
+            if (GetAsyncKeyState(KeyBindings::FoVAdjustDown.KeyCode))
                 iPhotoMode->ChangeFoV(-0.01f);
 
-            if (GetAsyncKeyState(0x49)) // I
+            if (GetAsyncKeyState(KeyBindings::Player_XAxisRotationUp.KeyCode))
                 iPlayer->Rotate(Nesae::ExpandedPhotoMode::RotationAxis::X, 0.01f);
 
-            if (GetAsyncKeyState(0x4F)) // O
+            if (GetAsyncKeyState(KeyBindings::Player_XAxisRotationDown.KeyCode))
                 iPlayer->Rotate(Nesae::ExpandedPhotoMode::RotationAxis::X, -0.01f);
 
-            if (GetAsyncKeyState(0x4B)) // K
+            if (GetAsyncKeyState(KeyBindings::Player_YAxisRotationUp.KeyCode))
                 iPlayer->Rotate(Nesae::ExpandedPhotoMode::RotationAxis::Y, 0.01f);
 
-            if (GetAsyncKeyState(0x4C)) // L
+            if (GetAsyncKeyState(KeyBindings::Player_YAxisRotationDown.KeyCode))
                 iPlayer->Rotate(Nesae::ExpandedPhotoMode::RotationAxis::Y, -0.01f);
 
-            if (GetAsyncKeyState(0x4E)) // N
+            if (GetAsyncKeyState(KeyBindings::Player_ZAxisRotationUp.KeyCode))
                 iPlayer->Rotate(Nesae::ExpandedPhotoMode::RotationAxis::Z, 0.01f);
 
-            if (GetAsyncKeyState(0x4D)) // M
+            if (GetAsyncKeyState(KeyBindings::Player_ZAxisRotationDown.KeyCode))
                 iPlayer->Rotate(Nesae::ExpandedPhotoMode::RotationAxis::Z, -0.01f);
 
-            if (GetAsyncKeyState(0x51)) // Q
+            if (GetAsyncKeyState(KeyBindings::Reset.KeyCode)) // Q
             {
                 // Game defined reset key
 
                 iPlayer->Restore();
             }
 
-            for (const auto& [index, object] : camera_pos_keys)
+            for (const auto& [index, object] : KeyBindings::Camera_PosManageKeys)
             {
-                if (GetAsyncKeyState(object.KeySave))
+                if (GetAsyncKeyState(object.KeySave.KeyCode))
                 {
                     iPhotoMode->SavePosition(index);
                     Beep(500, 100);
                 }
 
-                if (GetAsyncKeyState(object.KeyRestore))
+                if (GetAsyncKeyState(object.KeyRestore.KeyCode))
                 {
                     iPhotoMode->RestorePosition(index);
                     Beep(800, 100);
