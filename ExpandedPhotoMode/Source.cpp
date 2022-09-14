@@ -34,7 +34,9 @@ void InitalizeConsole()
 
 void UninitializeConsole()
 {
-    std::wcout << "\n\nMod disabled";
+    SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0x4);
+
+    std::wcout << "\n\nMod disabled - the console can be closed.";
 
     FreeConsole();
 }
