@@ -129,7 +129,7 @@ DWORD __stdcall MainThread(HMODULE thisModule)
             }
         }
 
-        if (GetAsyncKeyState(VK_END))
+        if (GetAsyncKeyState(KeyBindings::DisableMod.KeyCode))
             break;
 
 #pragma endregion
