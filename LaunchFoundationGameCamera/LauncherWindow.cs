@@ -2,6 +2,7 @@ using LaunchFoundationGameCamera.Components;
 using LaunchFoundationGameCamera.Styling;
 using System.Diagnostics;
 using System.Drawing.Text;
+using System.Xml.Xsl;
 
 namespace LaunchFoundationGameCamera
 {
@@ -210,6 +211,17 @@ namespace LaunchFoundationGameCamera
             if (!Launcher.StartFoVHighPreset())
             {
                 MessageBox.Show("Process failed, check the log file for details!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void ViewLogFileToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(Logger.OpenLogFile() == false)
+            {
+                MessageBox.Show("Cannot open the file!",
+                                "Error",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
             }
         }
     }

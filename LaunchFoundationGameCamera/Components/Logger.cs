@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System.Diagnostics;
+using System.Reflection;
 
 namespace LaunchFoundationGameCamera.Components
 {
@@ -6,23 +7,35 @@ namespace LaunchFoundationGameCamera.Components
     internal class Logger
     {
         private static string Assembly_filename => $"{Assembly.GetExecutingAssembly().GetName().Name}";
-        private static string Filename => Assembly_filename == null ? "log.txt" : $"{Assembly_filename}_log.txt";
+        private static string Filepath => Path.Combine(Path.GetTempPath(), $"{Assembly_filename}_log.txt");
+
+        public static bool OpenLogFile()
+        {
+            if(File.Exists(Filepath) == false)
+            {
+                return false;
+            }
+
+            Process.Start("notepad.exe", Filepath);
+
+            return true;
+        }
 
         public static void ClearLogFile()
         {
-            File.WriteAllText(Filename, string.Empty);
+            File.WriteAllText(Filepath, string.Empty);
         }
 
         public static void Log(string text)
         {
             var line = $"[{DateTime.Now}] {text}";
-            File.AppendAllText(Filename, line);
+            File.AppendAllText(Filepath, line);
         }
 
         public static void LogLine(string text)
         {
             var line = $"[{DateTime.Now}] {text}\n";
-            File.AppendAllText(Filename, line);
+            File.AppendAllText(Filepath, line);
         }
     }
 }
