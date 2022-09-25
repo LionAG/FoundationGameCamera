@@ -5,6 +5,12 @@ using System.Drawing.Text;
 
 namespace LaunchFoundationGameCamera
 {
+    enum Website
+    {
+        Github,
+        Discord
+    }
+
     public partial class LauncherWindow : Form
     {
         private readonly PrivateFontCollection Fonts = new();
@@ -16,12 +22,6 @@ namespace LaunchFoundationGameCamera
 
         private string DiscordInviteLink => DiscordInvite.Insert(0, "https://");
         private string GithubRepositoryLink => $"https://github.com/{RepositoryOwner}/{RepositoryName}";
-
-        enum Website
-        {
-            Github,
-            Discord
-        }
 
         public LauncherWindow()
         {
