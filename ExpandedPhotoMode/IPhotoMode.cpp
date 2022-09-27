@@ -8,9 +8,9 @@ void Nesae::ExpandedPhotoMode::IPhotoMode::EnableOverride()
     auto data = new byte[6];
     memset(data, 0x90, 6);
 
-    auto coordinateX = (QWORD)GetModuleHandle(NULL) + 0x8CB655;
-    auto coordinateY = (QWORD)GetModuleHandle(NULL) + 0x8CB65B;
-    auto coordinateZ = (QWORD)GetModuleHandle(NULL) + 0x8CB695;
+    auto coordinateX = (QWORD)GetModuleHandle(NULL) + 0x8CB855;
+    auto coordinateY = (QWORD)GetModuleHandle(NULL) + 0x8CB85B;
+    auto coordinateZ = (QWORD)GetModuleHandle(NULL) + 0x8CB895;
 
     DWORD oldProtect, sOldProtect;
     VirtualProtect((LPVOID)coordinateX, 0x1000, PAGE_READWRITE, &oldProtect);
@@ -29,9 +29,9 @@ void Nesae::ExpandedPhotoMode::IPhotoMode::EnableOverride()
 
 void Nesae::ExpandedPhotoMode::IPhotoMode::DisableOverride()
 {
-    auto coordinateX = (QWORD)GetModuleHandle(NULL) + 0x8CB655;
-    auto coordinateY = (QWORD)GetModuleHandle(NULL) + 0x8CB65B;
-    auto coordinateZ = (QWORD)GetModuleHandle(NULL) + 0x8CB695;
+    auto coordinateX = (QWORD)GetModuleHandle(NULL) + 0x8CB855;
+    auto coordinateY = (QWORD)GetModuleHandle(NULL) + 0x8CB85B;
+    auto coordinateZ = (QWORD)GetModuleHandle(NULL) + 0x8CB895;
 
     byte dataX[6] = { 0xF3, 0x0F, 0x11, 0x44, 0x24, 0x30 };
     byte dataY[6] = { 0xF3, 0x0F, 0x11, 0x4C, 0x24, 0x34 };
@@ -77,7 +77,7 @@ bool Nesae::ExpandedPhotoMode::IPhotoMode::IsPhotoMode()
 Nesae::ExpandedPhotoMode::SDK::PhotoModeCameraController* Nesae::ExpandedPhotoMode::IPhotoMode::GetCameraInstance()
 {
     auto moduleBase = (QWORD)GetModuleHandle(NULL);
-    auto pointerBase = *((QWORD*)(moduleBase + 0x36A76C0));
+    auto pointerBase = *((QWORD*)(moduleBase + 0x36AB6C0));
     auto instance = *((QWORD*)(pointerBase + 0x48));
 
     return reinterpret_cast<SDK::PhotoModeCameraController*>(instance);

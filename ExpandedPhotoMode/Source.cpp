@@ -6,7 +6,7 @@
 #include "IPlayer.hpp"
 #include "Globals.hpp"
 
-// Expanded Photo Mode mod for Shadow of the Tomb Raider (v1.0 build 458.0_64 - Steam)
+// Expanded Photo Mode mod for Shadow of the Tomb Raider (v1.0 build 487.0_64 - Steam)
 
 using Nesae::ExpandedPhotoMode::Globals::KeyBindings;
 

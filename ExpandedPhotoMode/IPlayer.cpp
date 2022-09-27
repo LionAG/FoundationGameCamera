@@ -14,7 +14,7 @@ Nesae::ExpandedPhotoMode::IPlayer::~IPlayer()
 Nesae::ExpandedPhotoMode::SDK::Player* Nesae::ExpandedPhotoMode::IPlayer::GetInstance()
 {
     auto moduleBase = (QWORD)GetModuleHandle(NULL);
-    auto instance = *((QWORD*)(moduleBase + 0x14690B8));
+    auto instance = *((QWORD*)(moduleBase + 0x146D0B8));
 
     return reinterpret_cast<SDK::Player*>(instance);
 }
