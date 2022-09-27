@@ -2,7 +2,6 @@ using LaunchFoundationGameCamera.Components;
 using LaunchFoundationGameCamera.Styling;
 using System.Diagnostics;
 using System.Drawing.Text;
-using System.Xml.Xsl;
 
 namespace LaunchFoundationGameCamera
 {
@@ -93,7 +92,7 @@ namespace LaunchFoundationGameCamera
             label_Supportinfo.Font = GetFontFromMemory(FontResource.Lato_Regular, 10.0f);
 
             menuStrip1.Renderer = new TopMenuRenderer();
-            
+
             Logger.ClearLogFile();
             Logger.LogLine($"{AppInformation.AssemblyName} v{AppInformation.ApplicationVersion} started!");
         }
@@ -216,7 +215,7 @@ namespace LaunchFoundationGameCamera
 
         private void ViewLogFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if(Logger.OpenLogFile() == false)
+            if (Logger.OpenLogFile() == false)
             {
                 MessageBox.Show("Cannot open the file!",
                                 "Error",

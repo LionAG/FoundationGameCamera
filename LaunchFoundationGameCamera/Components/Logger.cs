@@ -11,7 +11,7 @@ namespace LaunchFoundationGameCamera.Components
 
         public static bool OpenLogFile()
         {
-            if(File.Exists(Filepath) == false)
+            if (File.Exists(Filepath) == false)
             {
                 return false;
             }
