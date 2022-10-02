@@ -44,6 +44,7 @@
             this.toolStripMenuItem_OpenGithub = new System.Windows.Forms.ToolStripMenuItem();
             this.openDiscordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewLogFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.launcherToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,7 +52,6 @@
             this.foVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.foVHighToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.expandedPhotoModeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.viewLogFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_Content.SuspendLayout();
             this.panel_Bottom.SuspendLayout();
             this.panel_Middle.SuspendLayout();
@@ -228,6 +228,14 @@
             this.viewLicenseToolStripMenuItem.Text = "View License";
             this.viewLicenseToolStripMenuItem.Click += new System.EventHandler(this.ViewLicenseToolStripMenuItem_Click);
             // 
+            // viewLogFileToolStripMenuItem
+            // 
+            this.viewLogFileToolStripMenuItem.Image = global::LaunchFoundationGameCamera.Properties.Resources.eye_g209895b6c_1280;
+            this.viewLogFileToolStripMenuItem.Name = "viewLogFileToolStripMenuItem";
+            this.viewLogFileToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.viewLogFileToolStripMenuItem.Text = "View Log File";
+            this.viewLogFileToolStripMenuItem.Click += new System.EventHandler(this.ViewLogFileToolStripMenuItem_Click);
+            // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Image = global::LaunchFoundationGameCamera.Properties.Resources.camera_pixabay_1724286_12801;
@@ -283,13 +291,6 @@
             this.expandedPhotoModeToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
             this.expandedPhotoModeToolStripMenuItem.Text = "ECM";
             this.expandedPhotoModeToolStripMenuItem.Click += new System.EventHandler(this.ExpandedPhotoModeToolStripMenuItem_Click);
-            // 
-            // viewLogFileToolStripMenuItem
-            // 
-            this.viewLogFileToolStripMenuItem.Name = "viewLogFileToolStripMenuItem";
-            this.viewLogFileToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.viewLogFileToolStripMenuItem.Text = "View Log File";
-            this.viewLogFileToolStripMenuItem.Click += new System.EventHandler(this.ViewLogFileToolStripMenuItem_Click);
             // 
             // LauncherWindow
             // 

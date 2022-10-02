@@ -83,6 +83,16 @@ namespace LaunchFoundationGameCamera.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eye_g209895b6c_1280 {
+            get {
+                object obj = ResourceManager.GetObject("eye-g209895b6c_1280", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap github_logo_pixabayg767c696ab_640 {
             get {
                 object obj = ResourceManager.GetObject("github-logo_pixabayg767c696ab_640", resourceCulture);
