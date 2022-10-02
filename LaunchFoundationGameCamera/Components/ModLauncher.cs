@@ -98,13 +98,45 @@
             return false;
         }
 
+        private bool EnsureDirectX11(ModEntryData[] games)
+        {
+            Logger.LogLine("Verifying DirectX version");
+
+            foreach (var game in games)
+            {
+                if(game.GameExecutable.Equals("ROTTR.exe", StringComparison.OrdinalIgnoreCase))
+                {
+                    if (ModLauncherHelper.ROTTR_IsDirectX11())
+                    {
+                        Logger.LogLine("Verified DirectX 11");
+                        return true;
+                    }
+                }
+
+                if(game.GameExecutable.Equals("SOTTR.exe", StringComparison.OrdinalIgnoreCase))
+                {
+                    if (ModLauncherHelper.SOTTR_IsDirectX11())
+                    {
+                        Logger.LogLine("Verified DirectX 11");
+                        return true;
+                    }
+                }
+            }
+
+            Logger.LogLine("Invalid DirectX version selected");
+            return false;
+        }
+
         public bool StartGameCamera()
         {
             Logger.LogLine("Starting Game Camera");
 
             if (SupportedGames.TryGetValue("game_camera", out var games))
             {
-                return LoadMod(games);
+                if(EnsureDirectX11(games))
+                {
+                    return LoadMod(games);
+                }
             }
 
             return false;
