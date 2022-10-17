@@ -12,7 +12,7 @@
     <ApplicationIcon>Pictures\camera-pixabay-1724286_1280.ico</ApplicationIcon>
     <PackageIcon>camera-pixabay-1724286_1280.png</PackageIcon>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <AssemblyVersion>0.6.8</AssemblyVersion>
+    <AssemblyVersion>0.7.0</AssemblyVersion>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
@@ -28,6 +28,7 @@
     <None Remove="Fonts\Lato\Lato-Regular.ttf" />
     <None Remove="Fonts\Patrick_Hand_SC\PatrickHandSC-Regular.ttf" />
     <None Remove="License.txt" />
+    <None Remove="Mod\Camera_ROTTR.dll" />
     <None Remove="Mod\ExpandedPhotoMode.dll" />
     <None Remove="Mod\FoV_ROTTR.dll" />
     <None Remove="Mod\FoV_ROTTR_High.dll" />
@@ -45,6 +46,7 @@
     <EmbeddedResource Include="Fonts\Lato\Lato-Regular.ttf" />
     <EmbeddedResource Include="License.txt" />
     <EmbeddedResource Include="Fonts\Patrick_Hand_SC\PatrickHandSC-Regular.ttf" />
+    <EmbeddedResource Include="Mod\Camera_ROTTR.dll" />
     <EmbeddedResource Include="Mod\ExpandedPhotoMode.dll" />
     <EmbeddedResource Include="Mod\FoV_ROTTR_High.dll" />
     <EmbeddedResource Include="Mod\FoV_ROTTR_Low.dll" />
