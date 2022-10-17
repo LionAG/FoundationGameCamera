@@ -20,7 +20,7 @@
         {
             { "game_camera", new ModEntryData[]
             {
-                new ModEntryData("ROTTR.exe", "LaunchFoundationGameCamera.Mod.GameCamera_ROTTR_D3D11.dll")
+                new ModEntryData("ROTTR.exe", "LaunchFoundationGameCamera.Mod.Camera_ROTTR.dll")
             } },
 
             { "fov_low", new ModEntryData[]
