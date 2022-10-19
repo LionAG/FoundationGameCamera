@@ -17,22 +17,13 @@ A camera mod for the Foundation Engine.
 | Command / Action | Key |
 | --- | --- |
 | Display/Hide the overlay | HOME |
-| Camera forward | W |
-| Camera backward | S |
-| Camera left | A |
-| Camera right | D |
+| Camera forward | ARROW UP |
+| Camera backward | ARROW DOWN |
+| Camera left | ARROW LEFT |
+| Camera right | ARROW RIGHT |
 | Camera move up | SPACE |
 | Camera move down | ALT |
 | Disable the mod | END |
-
-## Known issues
-
-The display hook is not fully functional - to use it:
-
-1. Set desired values using the overlay sliders.
-2. Go to display settings and move the brightness slider.
-
-Using a custom resolution scale still requires using windowed mode.
 
 ### Acknowledgments
 
