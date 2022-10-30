@@ -21,8 +21,10 @@ A camera mod for the Foundation Engine.
 | Camera backward | ARROW DOWN |
 | Camera left | ARROW LEFT |
 | Camera right | ARROW RIGHT |
-| Camera move up | SPACE |
-| Camera move down | ALT |
+| Camera up | SPACE |
+| Camera down | ALT |
+| Fast move | RIGHT SHIFT |
+| Slow move | RIGHT COTROL |
 | Disable the mod | END |
 
 ### Acknowledgments
