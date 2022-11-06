@@ -215,13 +215,15 @@ namespace LaunchFoundationGameCamera
 
         private void ViewLogFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (Logger.OpenLogFile() == false)
-            {
-                MessageBox.Show("Cannot open the file!",
-                                "Error",
-                                MessageBoxButtons.OK,
-                                MessageBoxIcon.Error);
-            }
+            //if (Logger.OpenLogFile() == false)
+            //{
+            //    MessageBox.Show("Cannot open the file!",
+            //                    "Error",
+            //                    MessageBoxButtons.OK,
+            //                    MessageBoxIcon.Error);
+            //}
+
+           new LogWindow(Logger.FilePath).ShowDialog();
         }
     }
 }
