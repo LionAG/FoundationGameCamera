@@ -54,7 +54,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MaximizeBox = false;
             this.Name = "ChangelogWindow";
-            this.Text = "ChangelogWindow";
+            this.Text = "Changelog";
             this.Load += new System.EventHandler(this.ChangelogWindow_Load);
             this.ResumeLayout(false);
 
