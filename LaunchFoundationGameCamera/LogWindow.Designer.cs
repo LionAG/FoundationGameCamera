@@ -37,11 +37,12 @@
             // 
             this.richTextBox_LogData.BackColor = System.Drawing.Color.Black;
             this.richTextBox_LogData.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox_LogData.Dock = System.Windows.Forms.DockStyle.Top;
             this.richTextBox_LogData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
-            this.richTextBox_LogData.Location = new System.Drawing.Point(12, 12);
+            this.richTextBox_LogData.Location = new System.Drawing.Point(0, 0);
             this.richTextBox_LogData.Name = "richTextBox_LogData";
             this.richTextBox_LogData.ReadOnly = true;
-            this.richTextBox_LogData.Size = new System.Drawing.Size(636, 278);
+            this.richTextBox_LogData.Size = new System.Drawing.Size(660, 287);
             this.richTextBox_LogData.TabIndex = 0;
             this.richTextBox_LogData.Text = "";
             // 

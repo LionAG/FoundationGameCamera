@@ -44,6 +44,7 @@
             this.toolStripMenuItem_OpenGithub = new System.Windows.Forms.ToolStripMenuItem();
             this.openDiscordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewLicenseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.viewChangelogToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewLogFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.closeToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -170,9 +171,9 @@
             // 
             this.label_Header.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label_Header.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label_Header.Location = new System.Drawing.Point(0, 28);
+            this.label_Header.Location = new System.Drawing.Point(0, 24);
             this.label_Header.Name = "label_Header";
-            this.label_Header.Size = new System.Drawing.Size(726, 115);
+            this.label_Header.Size = new System.Drawing.Size(726, 119);
             this.label_Header.TabIndex = 1;
             this.label_Header.Text = "Welcome to FoundationGameCamera";
             this.label_Header.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -186,7 +187,7 @@
             this.launcherToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(726, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(726, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -196,19 +197,20 @@
             this.toolStripMenuItem_OpenGithub,
             this.openDiscordToolStripMenuItem,
             this.viewLicenseToolStripMenuItem,
+            this.viewChangelogToolStripMenuItem,
             this.viewLogFileToolStripMenuItem,
             this.closeToolStripMenuItem,
             this.closeToolStripMenuItem1});
             this.launcherToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
             this.launcherToolStripMenuItem.Name = "launcherToolStripMenuItem";
-            this.launcherToolStripMenuItem.Size = new System.Drawing.Size(100, 24);
+            this.launcherToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
             this.launcherToolStripMenuItem.Text = "Application";
             // 
             // toolStripMenuItem_OpenGithub
             // 
             this.toolStripMenuItem_OpenGithub.Image = global::LaunchFoundationGameCamera.Properties.Resources.github_logo_pixabayg767c696ab_640;
             this.toolStripMenuItem_OpenGithub.Name = "toolStripMenuItem_OpenGithub";
-            this.toolStripMenuItem_OpenGithub.Size = new System.Drawing.Size(224, 26);
+            this.toolStripMenuItem_OpenGithub.Size = new System.Drawing.Size(184, 26);
             this.toolStripMenuItem_OpenGithub.Text = "Open GitHub";
             this.toolStripMenuItem_OpenGithub.Click += new System.EventHandler(this.ToolStripMenuItem_OpenGithub_Click);
             // 
@@ -216,7 +218,7 @@
             // 
             this.openDiscordToolStripMenuItem.Image = global::LaunchFoundationGameCamera.Properties.Resources.logo_ge5513914d_1920;
             this.openDiscordToolStripMenuItem.Name = "openDiscordToolStripMenuItem";
-            this.openDiscordToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.openDiscordToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.openDiscordToolStripMenuItem.Text = "Open Discord";
             this.openDiscordToolStripMenuItem.Click += new System.EventHandler(this.OpenDiscordToolStripMenuItem_Click);
             // 
@@ -224,23 +226,31 @@
             // 
             this.viewLicenseToolStripMenuItem.Image = global::LaunchFoundationGameCamera.Properties.Resources.license_icon_2793454_1280;
             this.viewLicenseToolStripMenuItem.Name = "viewLicenseToolStripMenuItem";
-            this.viewLicenseToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.viewLicenseToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.viewLicenseToolStripMenuItem.Text = "View License";
             this.viewLicenseToolStripMenuItem.Click += new System.EventHandler(this.ViewLicenseToolStripMenuItem_Click);
+            // 
+            // viewChangelogToolStripMenuItem
+            // 
+            this.viewChangelogToolStripMenuItem.Image = global::LaunchFoundationGameCamera.Properties.Resources.edit_g9e78a68f1_1280;
+            this.viewChangelogToolStripMenuItem.Name = "viewChangelogToolStripMenuItem";
+            this.viewChangelogToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.viewChangelogToolStripMenuItem.Text = "View Changelog";
+            this.viewChangelogToolStripMenuItem.Click += new System.EventHandler(this.ViewChangelogToolStripMenuItem_Click);
             // 
             // viewLogFileToolStripMenuItem
             // 
             this.viewLogFileToolStripMenuItem.Image = global::LaunchFoundationGameCamera.Properties.Resources.eye_g209895b6c_1280;
             this.viewLogFileToolStripMenuItem.Name = "viewLogFileToolStripMenuItem";
-            this.viewLogFileToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.viewLogFileToolStripMenuItem.Text = "View Log File";
+            this.viewLogFileToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
+            this.viewLogFileToolStripMenuItem.Text = "View Launcher Log";
             this.viewLogFileToolStripMenuItem.Click += new System.EventHandler(this.ViewLogFileToolStripMenuItem_Click);
             // 
             // closeToolStripMenuItem
             // 
             this.closeToolStripMenuItem.Image = global::LaunchFoundationGameCamera.Properties.Resources.camera_pixabay_1724286_12801;
             this.closeToolStripMenuItem.Name = "closeToolStripMenuItem";
-            this.closeToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.closeToolStripMenuItem.Size = new System.Drawing.Size(184, 26);
             this.closeToolStripMenuItem.Text = "Check Updates";
             this.closeToolStripMenuItem.Click += new System.EventHandler(this.CloseToolStripMenuItem_Click);
             // 
@@ -248,7 +258,7 @@
             // 
             this.closeToolStripMenuItem1.Image = global::LaunchFoundationGameCamera.Properties.Resources.x_g95cc721a4_1280;
             this.closeToolStripMenuItem1.Name = "closeToolStripMenuItem1";
-            this.closeToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.closeToolStripMenuItem1.Size = new System.Drawing.Size(184, 26);
             this.closeToolStripMenuItem1.Text = "Close";
             this.closeToolStripMenuItem1.Click += new System.EventHandler(this.CloseToolStripMenuItem1_Click);
             // 
@@ -261,40 +271,40 @@
             this.expandedPhotoModeToolStripMenuItem});
             this.launcherToolStripMenuItem1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
             this.launcherToolStripMenuItem1.Name = "launcherToolStripMenuItem1";
-            this.launcherToolStripMenuItem1.Size = new System.Drawing.Size(82, 24);
+            this.launcherToolStripMenuItem1.Size = new System.Drawing.Size(68, 20);
             this.launcherToolStripMenuItem1.Text = "Launcher";
             // 
             // foVLowToolStripMenuItem
             // 
             this.foVLowToolStripMenuItem.Name = "foVLowToolStripMenuItem";
-            this.foVLowToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.foVLowToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.foVLowToolStripMenuItem.Text = "FoV [Low]";
             this.foVLowToolStripMenuItem.Click += new System.EventHandler(this.FoVLowToolStripMenuItem_Click);
             // 
             // foVToolStripMenuItem
             // 
             this.foVToolStripMenuItem.Name = "foVToolStripMenuItem";
-            this.foVToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.foVToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.foVToolStripMenuItem.Text = "FoV [Medium]";
             this.foVToolStripMenuItem.Click += new System.EventHandler(this.FoVMediumToolStripMenuItem_Click);
             // 
             // foVHighToolStripMenuItem
             // 
             this.foVHighToolStripMenuItem.Name = "foVHighToolStripMenuItem";
-            this.foVHighToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.foVHighToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.foVHighToolStripMenuItem.Text = "FoV [High]";
             this.foVHighToolStripMenuItem.Click += new System.EventHandler(this.FoVHighToolStripMenuItem_Click);
             // 
             // expandedPhotoModeToolStripMenuItem
             // 
             this.expandedPhotoModeToolStripMenuItem.Name = "expandedPhotoModeToolStripMenuItem";
-            this.expandedPhotoModeToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.expandedPhotoModeToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
             this.expandedPhotoModeToolStripMenuItem.Text = "ECM";
             this.expandedPhotoModeToolStripMenuItem.Click += new System.EventHandler(this.ExpandedPhotoModeToolStripMenuItem_Click);
             // 
             // LauncherWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(726, 401);
@@ -346,5 +356,6 @@
         private ToolStripMenuItem foVLowToolStripMenuItem;
         private ToolStripMenuItem foVHighToolStripMenuItem;
         private ToolStripMenuItem viewLogFileToolStripMenuItem;
+        private ToolStripMenuItem viewChangelogToolStripMenuItem;
     }
 }

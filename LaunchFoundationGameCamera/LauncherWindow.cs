@@ -225,5 +225,11 @@ namespace LaunchFoundationGameCamera
 
            new LogWindow(Logger.FilePath).ShowDialog();
         }
+
+        private void ViewChangelogToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            var updater = new Updater(RepositoryName, RepositoryOwner);
+            new ChangelogWindow(updater).ShowDialog();
+        }
     }
 }

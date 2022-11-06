@@ -83,6 +83,16 @@ namespace LaunchFoundationGameCamera.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap edit_g9e78a68f1_1280 {
+            get {
+                object obj = ResourceManager.GetObject("edit-g9e78a68f1_1280", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap eye_g209895b6c_1280 {
             get {
                 object obj = ResourceManager.GetObject("eye-g209895b6c_1280", resourceCulture);
@@ -101,7 +111,7 @@ namespace LaunchFoundationGameCamera.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Copyright (c) 2010-2014 by tyPoland Lukasz Dziedzic (team@latofonts.com) with Reserved Font Name &quot;Lato&quot;
+        ///   Looks up a localized string similar to Copyright 2016 Google Inc. All Rights Reserved.
         ///
         ///This Font Software is licensed under the SIL Open Font License, Version 1.1.
         ///This license is copied below, and is also available with a FAQ at:
@@ -113,7 +123,8 @@ namespace LaunchFoundationGameCamera.Properties {
         ///-----------------------------------------------------------
         ///
         ///PREAMBLE
-        ///The goals of the Open Font License (OFL [rest of string was truncated]&quot;;.
+        ///The goals of the Open Font License (OFL) are to stimulate worldwide
+        ///development of collaborati [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string License {
             get {

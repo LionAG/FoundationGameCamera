@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace LaunchFoundationGameCamera.Components
 {
-    internal class Updater
+    public class Updater
     {
         private string RepositoryName { get; init; }
         private string RepositoryOwner { get; init; }
@@ -14,6 +14,19 @@ namespace LaunchFoundationGameCamera.Components
             GitHub = new GitHubClient(new ProductHeaderValue("FoundationGameCamera"));
             RepositoryName = repositoryName;
             RepositoryOwner = repositoryOwner;
+        }
+
+        public string? GetChangelog()
+        {
+            var releases = GitHub.Repository.Release.GetAll(RepositoryOwner, RepositoryName).Result;
+            var changelog = "";
+
+            foreach (var release in releases)
+            {
+                changelog += $"{release.TagName}\n\n{release.Body}\n\n";
+            }
+
+            return changelog;
         }
 
         public string? GetLatestVersionFromTag()

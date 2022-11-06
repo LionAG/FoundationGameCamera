@@ -133,13 +133,16 @@
   <data name="license-icon-2793454_1280" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\license-icon-2793454_1280.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="eye-g209895b6c_1280" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\eye-g209895b6c_1280.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logo-ge5513914d_1920" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\logo-ge5513914d_1920.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="camera_pixabay_1724286_12801" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Pictures\camera-pixabay-1724286_1280.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="eye-g209895b6c_1280" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Pictures\eye-g209895b6c_1280.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="edit-g9e78a68f1_1280" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Pictures\edit-g9e78a68f1_1280.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
