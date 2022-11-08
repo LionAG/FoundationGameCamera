@@ -27,7 +27,14 @@ namespace LaunchFoundationGameCamera
 
         private void ChangelogWindow_Load(object sender, EventArgs e)
         {
-            richTextBox_Changelog.Text = Updater.GetChangelog();
+            try
+            {
+                richTextBox_Changelog.Text = Updater.GetChangelog();
+            }
+            catch
+            {
+                richTextBox_Changelog.Text = "Changelog unavailable.";
+            }
 
             richTextBox_Changelog.ReadOnly = false;
             richTextBox_Changelog.TabStop = false;
