@@ -45,6 +45,8 @@
             this.richTextBox_Changelog.Size = new System.Drawing.Size(784, 401);
             this.richTextBox_Changelog.TabIndex = 0;
             this.richTextBox_Changelog.Text = "";
+            this.richTextBox_Changelog.SelectionChanged += new System.EventHandler(this.RichTextBox_Changelog_SelectionChanged);
+            this.richTextBox_Changelog.Click += new System.EventHandler(this.RichTextBox_Changelog_Click);
             // 
             // ChangelogWindow
             // 
