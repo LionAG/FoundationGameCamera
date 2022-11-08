@@ -34,6 +34,7 @@
             // richTextBox_Changelog
             // 
             this.richTextBox_Changelog.BackColor = System.Drawing.Color.Black;
+            this.richTextBox_Changelog.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox_Changelog.Dock = System.Windows.Forms.DockStyle.Fill;
             this.richTextBox_Changelog.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.richTextBox_Changelog.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));

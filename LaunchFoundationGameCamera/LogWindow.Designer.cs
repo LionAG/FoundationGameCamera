@@ -36,7 +36,7 @@
             // richTextBox_LogData
             // 
             this.richTextBox_LogData.BackColor = System.Drawing.Color.Black;
-            this.richTextBox_LogData.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox_LogData.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox_LogData.Dock = System.Windows.Forms.DockStyle.Top;
             this.richTextBox_LogData.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(222)))), ((int)(((byte)(222)))));
             this.richTextBox_LogData.Location = new System.Drawing.Point(0, 0);
