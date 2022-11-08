@@ -1,5 +1,6 @@
 ﻿using Octokit;
 using System.Diagnostics;
+using System.Reflection;
 
 namespace LaunchFoundationGameCamera.Components
 {
@@ -11,7 +12,9 @@ namespace LaunchFoundationGameCamera.Components
 
         public Updater(string repositoryName, string repositoryOwner)
         {
-            GitHub = new GitHubClient(new ProductHeaderValue("FoundationGameCamera"));
+            var appName = Assembly.GetExecutingAssembly().GetName().Name;
+
+            GitHub = new GitHubClient(new ProductHeaderValue(appName));
             RepositoryName = repositoryName;
             RepositoryOwner = repositoryOwner;
         }
