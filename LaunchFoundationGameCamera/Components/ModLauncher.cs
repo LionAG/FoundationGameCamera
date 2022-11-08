@@ -104,7 +104,7 @@
 
             foreach (var game in games)
             {
-                if(game.GameExecutable.Equals("ROTTR.exe", StringComparison.OrdinalIgnoreCase))
+                if (game.GameExecutable.Equals("ROTTR.exe", StringComparison.OrdinalIgnoreCase))
                 {
                     if (ModLauncherHelper.ROTTR_IsDirectX11())
                     {
@@ -113,7 +113,7 @@
                     }
                 }
 
-                if(game.GameExecutable.Equals("SOTTR.exe", StringComparison.OrdinalIgnoreCase))
+                if (game.GameExecutable.Equals("SOTTR.exe", StringComparison.OrdinalIgnoreCase))
                 {
                     if (ModLauncherHelper.SOTTR_IsDirectX11())
                     {
@@ -133,7 +133,7 @@
 
             if (SupportedGames.TryGetValue("game_camera", out var games))
             {
-                if(EnsureDirectX11(games))
+                if (EnsureDirectX11(games))
                 {
                     return LoadMod(games);
                 }

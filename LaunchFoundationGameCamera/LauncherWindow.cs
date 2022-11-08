@@ -223,7 +223,7 @@ namespace LaunchFoundationGameCamera
             //                    MessageBoxIcon.Error);
             //}
 
-           new LogWindow(Logger.FilePath).ShowDialog();
+            new LogWindow(Logger.FilePath).ShowDialog();
         }
 
         private void ViewChangelogToolStripMenuItem_Click(object sender, EventArgs e)

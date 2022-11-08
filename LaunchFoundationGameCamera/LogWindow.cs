@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Diagnostics;
 
 namespace LaunchFoundationGameCamera
 {
@@ -23,7 +14,7 @@ namespace LaunchFoundationGameCamera
 
         private void LogWindow_Load(object sender, EventArgs e)
         {
-            if(File.Exists(LogFilePath))
+            if (File.Exists(LogFilePath))
             {
                 richTextBox_LogData.Text = File.ReadAllText(LogFilePath);
             }
@@ -33,7 +24,7 @@ namespace LaunchFoundationGameCamera
         {
             File.Copy(LogFilePath, "launcher_log.txt", true);
 
-            if(DialogResult.Yes == MessageBox.Show("Log file saved in the launcher's working directory. Open it?",
+            if (DialogResult.Yes == MessageBox.Show("Log file saved in the launcher's working directory. Open it?",
                                                    "Information",
                                                    MessageBoxButtons.YesNo,
                                                    MessageBoxIcon.Asterisk))
