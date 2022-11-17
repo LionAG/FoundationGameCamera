@@ -6,8 +6,8 @@ A camera mod for the Foundation Engine.
 ## How to use
 
 1. Download the latest launcher version.
-2. Start the game and load your saved game.
-3. In the launcher app click on the appropriate button.
+2. Start **Rise of the Tomb Raider** / **Shadow of the Tomb Raider** and load your saved game.
+3. Load the mod by clicking on the appropriate button.
 4. Enjoy!
 
 - If you get an error saying that .NET runtime is missing you need to download and install [this](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/runtime-desktop-6.0.8-windows-x64-installer)
