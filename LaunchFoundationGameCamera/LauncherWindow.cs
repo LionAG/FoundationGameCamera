@@ -16,7 +16,7 @@ namespace LaunchFoundationGameCamera
         private readonly PrivateFontCollection Fonts = new();
         private readonly ModLauncher Launcher = new();
 
-        public readonly string RepositoryOwner = "Nesae-avi";
+        public readonly string RepositoryOwner = "livelylion";
         public readonly string RepositoryName = "FoundationGameCamera";
         private readonly string DiscordInvite = "discord.gg/tugaUeTvUP";
 
